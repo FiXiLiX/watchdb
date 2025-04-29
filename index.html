@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive email layout.">
+    <title>Email &ndash; Layout Examples &ndash; Pure</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="layout" class="content pure-g">
+    <div id="nav" class="pure-u">
+        <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
+
+        <div class="nav-inner">
+            <!-- <button class="primary-button pure-button">Kovacevic Satovi</button> -->
+            <p style="color:white">Kovacevic Satovi</p>
+
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">KP <span class="email-count"></span></a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Instagram <span class="email-count"></span></a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">+381123594837 <span class="email-count"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="list" class="pure-u-1">
+    </div>
+
+    <div id="main" class="pure-u-1" style="width: 100%;">
+        <div id="email-content" class="email-content">
+            
+        </div>
+    </div>
+</div>
+<!-- Script to make the Menu link work -->
+<!-- Just stripped down version of the js/ui.js script for the side-menu layout -->
+<script>
+var watchList = {};
+    openWatch = function (key) {
+        const email = document.getElementById("email-content");
+        const slide = []
+        const slideImages = []
+        for (let index = 0; index < watchList[key].images.length; index++) {
+            slide.push(`<a href="#slide-${index+1}">${index+1}</a>`)
+            slideImages.push(`<div id="slide-${index+1}">
+                        <img width="128" class="slide-img" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="${watchList[key].images[index]}">
+                    </div>`)
+        }
+        email.innerHTML = `
+        <div class="email-content-header pure-g">
+                <div>
+                    <h1 class="email-content-title">${watchList[key].name}</h1>
+                </div>
+            </div>
+
+            <div class="email-content-body">
+                <div class="slider">
+                ${slide.join("")}
+
+                <div class="slides">
+                    ${slideImages.join("")}
+                </div>
+                </div>
+
+                <div style="margin-top:1em; text-align: left;">
+                    ${watchList[key].color ? "Boja: " + watchList[key].color : ''}   
+                    ${watchList[key].case_size ? "Velicina: " + watchList[key].case_size : ''} 
+                    ${watchList[key].movement ? "Mehanizam: " + watchList[key].movement : ''} 
+                    ${watchList[key].country ? "Zemlja: " + watchList[key].country : ''} 
+                    ${watchList[key].price ? "Cena: " + watchList[key].price : ''} 
+                    <br/>${watchList[key].description}
+                </div>
+            </div>
+        `
+    }
+    fetch('/watches.json')
+    .then(async response => {
+        watchList = await response.json();
+        const list = document.getElementById("list");
+        let watchHtml = "";
+        Object.keys(watchList).forEach(function(key, index) {
+            watchHtml += `<div class="email-item email-item-selected pure-g" data-id="${key}" onclick="openWatch('${key}')">
+            <div class="pure-u">
+                <img width="128" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="${watchList[key].images[0]}">
+            </div>
+
+            <div class="pure-u-3-4">
+                <h5 class="email-name">${watchList[key].country}</h5>
+                <h4 class="email-subject">${watchList[key].name}</h4>
+                <p class="email-desc">
+                    ${watchList[key].price}
+                </p>
+            </div>
+        </div>`;
+        });
+        list.innerHTML = watchHtml;
+        
+    })
+    function getElements() {
+        return {
+            menu: document.getElementById('nav'),
+            menuLink: document.getElementById('menuLink')
+        };
+    }
+
+    function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/);
+        var length = classes.length;
+        var i = 0;
+
+        for (; i < length; i++) {
+            if (classes[i] === className) {
+                classes.splice(i, 1);
+                break;
+            }
+        }
+        // The className is not found
+        if (length === classes.length) {
+            classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+    }
+
+    function toggleMenu() {
+        var active = 'active';
+        var elements = getElements();
+
+        toggleClass(elements.menu, active);
+    }
+
+    function handleEvent(e) {
+        var elements = getElements();
+
+        if (e.target.id === elements.menuLink.id) {
+            toggleMenu();
+            e.preventDefault();
+        } else if (elements.menu.className.indexOf('active') !== -1) {
+            toggleMenu();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('click', handleEvent);
+    });
+</script>
+</body>
+</html>
