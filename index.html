@@ -16,7 +16,8 @@
 
         <div class="nav-inner">
             <!-- <button class="primary-button pure-button">Kovacevic Satovi</button> -->
-            <p style="color:white">Kovacevic Satovi</p>
+            <img width="128" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="/kovacevic_logo.png">
+            >
 
             <div class="pure-menu">
                 <ul class="pure-menu-list">
@@ -68,11 +69,12 @@ var watchList = {};
                 </div>
 
                 <div style="margin-top:1em; text-align: left;">
-                    ${watchList[key].color ? "Boja: " + watchList[key].color : ''}   
-                    ${watchList[key].case_size ? "Velicina: " + watchList[key].case_size : ''} 
-                    ${watchList[key].movement ? "Mehanizam: " + watchList[key].movement : ''} 
-                    ${watchList[key].country ? "Zemlja: " + watchList[key].country : ''} 
-                    ${watchList[key].price ? "Cena: " + watchList[key].price : ''} 
+                    ${watchList[key].color ? "<span class='property'>Boja: " + watchList[key].color + "</span>" : ''}   
+                    ${watchList[key].case_size ? "<span class='property'>Velicina: " + watchList[key].case_size + "</span>" : ''} 
+                    ${watchList[key].movement ? "<span class='property'>Mehanizam: " + watchList[key].movement + "</span>" : ''} 
+                    ${watchList[key].country ? "<span class='property'>Zemlja: " + watchList[key].country + "</span>" : ''} 
+                    ${watchList[key].price ? "<span class='property'>Cena: " + watchList[key].price + "</span>" : ''} 
+                    ${watchList[key].bracelet ? "<span class='property'>Narukvica: " + watchList[key].bracelet + "</span>" : ''} 
                     <br/>${watchList[key].description}
                 </div>
             </div>

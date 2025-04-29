@@ -47,12 +47,18 @@ a {
     padding: 0;
 }
 
+.property {
+    background-color: #c2db34;
+    padding: .2em;
+    border-radius: .2em;
+}
+
 /* Make the navigation 100% width on phones */
 #nav {
     width: 100%;
     height: 40px;
     position: relative;
-    background: rgb(37, 42, 58);
+    background: rgb(0, 0, 0);
     text-align: center;
 }
 /* Show the "Menu" button on phones */

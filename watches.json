@@ -5,26 +5,42 @@
         "case_size": "30mm",
         "movement": "Mehanicki",
         "country": "USSR",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "description": "",
         "price": "50e",
         "images": [
-            "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg",
-            "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg",
-            "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg"
-        ]
+            "https://i.ibb.co/4zDqRd8/17459366999648195047628082565931.jpg"
+        ],
+        "bracelet": "Bez"
     },
     "SeikoH6015400": {
         "name": "Seiko H601-5400",
         "color": "Celik",
-        "case_size": "30mm",
+        "case_size": "34mm",
         "movement": "Quartz H601",
         "country": "Japan",
-        "description": "Test test test",
+        "description": "",
         "price": "80e",
         "images": [
             "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg",
-            "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg",
-            "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg"
-        ]
+            "https://i.ibb.co/6JFStNgT/20250428-210711.jpg",
+            "https://i.ibb.co/4Q8XssD/20250428-210705.jpg",
+            "https://i.ibb.co/fVH8k3qy/20250428-210830.jpg"
+        ],
+        "bracelet": "Kozna, crna 20mm"
+    },
+    "FossilBigTic": {
+        "name": "Fossil Big Tic JR-7843",
+        "color": "Celik",
+        "case_size": "38mm",
+        "movement": "Quartz JR-7843",
+        "country": "Swiss",
+        "description": "",
+        "price": "80e",
+        "images": [
+            "https://i.ibb.co/8L8kYQFJ/20250428-221043.jpg",
+            "https://i.ibb.co/60CQyk0x/20250428-221050.jpg",
+            "https://i.ibb.co/rG8d0dSZ/20250428-221117.jpg"
+        ],
+        "bracelet": "Original"
     }
 }
