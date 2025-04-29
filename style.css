@@ -51,6 +51,21 @@ a {
     background-color: #c2db34;
     padding: .2em;
     border-radius: .2em;
+    margin: .2em
+}
+
+.backButton {
+    margin-top: 1em;
+    color: black;
+    margin-right: .5em;
+    background-color:#c2db34;
+    padding: .2em;
+    border-radius: .2em;
+}
+
+.property-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Make the navigation 100% width on phones */
@@ -210,6 +225,10 @@ a {
  * of the mobile styles.
  */
 @media (min-width: 40em) {
+
+    .backButton {
+        display: none;
+    }
 
     /* Move the layout over so we can fit the nav + list in on the left */
     #layout {

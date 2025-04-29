@@ -15,7 +15,6 @@
         <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
-            <!-- <button class="primary-button pure-button">Kovacevic Satovi</button> -->
             <img width="128" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="/kovacevic_logo.png">
             >
 
@@ -44,6 +43,7 @@
 var watchList = {};
     openWatch = function (key) {
         const email = document.getElementById("email-content");
+        email.scrollIntoView()
         const slide = []
         const slideImages = []
         for (let index = 0; index < watchList[key].images.length; index++) {
@@ -54,7 +54,8 @@ var watchList = {};
         }
         email.innerHTML = `
         <div class="email-content-header pure-g">
-                <div>
+                <div style="display: flex; align-items: center">
+                    <a class="backButton" href="#${"menu-" + key}">Nazad</a>
                     <h1 class="email-content-title">${watchList[key].name}</h1>
                 </div>
             </div>
@@ -69,12 +70,14 @@ var watchList = {};
                 </div>
 
                 <div style="margin-top:1em; text-align: left;">
+                    <div class="property-container">
                     ${watchList[key].color ? "<span class='property'>Boja: " + watchList[key].color + "</span>" : ''}   
                     ${watchList[key].case_size ? "<span class='property'>Velicina: " + watchList[key].case_size + "</span>" : ''} 
                     ${watchList[key].movement ? "<span class='property'>Mehanizam: " + watchList[key].movement + "</span>" : ''} 
                     ${watchList[key].country ? "<span class='property'>Zemlja: " + watchList[key].country + "</span>" : ''} 
                     ${watchList[key].price ? "<span class='property'>Cena: " + watchList[key].price + "</span>" : ''} 
                     ${watchList[key].bracelet ? "<span class='property'>Narukvica: " + watchList[key].bracelet + "</span>" : ''} 
+                    </div>
                     <br/>${watchList[key].description}
                 </div>
             </div>
@@ -86,7 +89,7 @@ var watchList = {};
         const list = document.getElementById("list");
         let watchHtml = "";
         Object.keys(watchList).forEach(function(key, index) {
-            watchHtml += `<div class="email-item email-item-selected pure-g" data-id="${key}" onclick="openWatch('${key}')">
+            watchHtml += `<div class="email-item email-item-selected pure-g" id="menu-${key}" data-id="${key}" onclick="openWatch('${key}')">
             <div class="pure-u">
                 <img width="128" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="${watchList[key].images[0]}">
             </div>
