@@ -78,5 +78,21 @@
             "https://i.ibb.co/Y4H88NSx/20250323-220554.jpg"
         ],
         "bracelet": "Original"
+    },
+    "KienzleSmaragd": {
+        "name": "Kienzle Smaragd",
+        "color": "Celik",
+        "case_size": "34mm",
+        "movement": "Mehanicki",
+        "country": "Nemacka",
+        "description": "",
+        "price": "40e",
+        "images": [
+            "https://i.ibb.co/Lz3fskhJ/20250323-221105.jpg",
+            "https://i.ibb.co/JWDN2q57/20250323-221111.jpg",
+            "https://i.ibb.co/bjTwzWvf/20250323-221109.jpg",
+            "https://i.ibb.co/ynYn2dvP/20250323-221131.jpg"
+        ],
+        "bracelet": "Kozna crna"
     }
 }

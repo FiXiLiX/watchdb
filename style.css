@@ -75,7 +75,7 @@ a {
     position: relative;
     background: rgb(0, 0, 0);
     text-align: center;
-    overflow-y: hidden;
+    overflow-x: hidden !important;
 }
 /* Show the "Menu" button on phones */
 #nav .nav-menu-button {
