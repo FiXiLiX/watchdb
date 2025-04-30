@@ -21,7 +21,7 @@
         "case_size": "34mm",
         "movement": "Quartz H601",
         "country": "Japan",
-        "description": "",
+        "description": "Par ogrebotinica na staklu i metalu, neprimetno pri nosenju, nisam nasao u boljem stanju bilo gde na internetu da je na prodaju, svi dugmici rade, alarm, datum. . .",
         "price": "80e",
         "images": [
             "https://i.ibb.co/6JFStNgT/20250428-210711.jpg",
@@ -62,5 +62,21 @@
             "https://i.ibb.co/LhnXLN7y/20250428-212741.jpg"
         ],
         "bracelet": "16mm Ritter Aligator kozni crni"
+    },
+    "SwatchTheBeep": {
+        "name": "Swatch The Beep",
+        "color": "Plava",
+        "case_size": "34mm",
+        "movement": "Quartz",
+        "country": "Swiss",
+        "description": "Swatch pejdzer/pager, potpuno ispravan u odlicnom stanju",
+        "price": "40e",
+        "images": [
+            "https://i.ibb.co/Ndb9gPZZ/20250323-220500.jpg",
+            "https://i.ibb.co/sdXxHty4/20250323-220520.jpg",
+            "https://i.ibb.co/N2NVJ9VP/20250323-220504.jpg",
+            "https://i.ibb.co/Y4H88NSx/20250323-220554.jpg"
+        ],
+        "bracelet": "Original"
     }
 }
