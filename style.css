@@ -401,3 +401,6 @@ a {
   .slider > a:focus {
     background: #000;
   }
+.featured {
+    max-width: 300px;
+}

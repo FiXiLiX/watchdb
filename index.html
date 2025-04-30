@@ -17,13 +17,12 @@
         <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
-            <img width="100" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="/kovacevic_logo.png">
+            <a href="/"><img width="100" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="/kovacevic_logo.png"></a>
             
 
             <div class="pure-menu">
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item"><a target="_blank" href="https://www.kupujemprodajem.com/filip-baterije/svi-oglasi/540735/1" class="pure-menu-link">KP <span class="email-count"></span></a></li>
-                    <!-- <li class="pure-menu-item"><a href="#" class="pure-menu-link">Instagram <span class="email-count"></span></a></li> -->
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">+381611679564 <span class="email-count"></span></a></li>
                 </ul>
             </div>
@@ -35,13 +34,42 @@
 
     <div id="main" class="pure-u-1" style="width: 100%;">
         <div id="email-content" class="email-content">
-            
+            <h3 style="padding: 0 1em;">Najnoviji</h3>
+            <div style="padding: 0 1em; display: flex; overflow-x: scroll;">
+                <div id="new-1"></div>
+                <div id="new-2"></div>
+                <div id="new-3"></div>
         </div>
+        <h3 style="padding: 0 1em;">Preporuke</h3>
+            <div style="padding: 0 1em; display: flex; overflow-x: scroll;">
+                <div id="recomended-1"></div>
+                <div id="recomended-2"></div>
+                <div id="recomended-3"></div>
     </div>
 </div>
 <!-- Script to make the Menu link work -->
 <!-- Just stripped down version of the js/ui.js script for the side-menu layout -->
 <script>
+setOnPlace = function(id, key) {
+    let target = document.getElementById(id);
+    let data = watchList[key];
+    target.innerHTML = `
+    <div class="email-item email-item-selected pure-g featured" id="menu-${key}" data-id="${key}" onclick="openWatch('${key}')">
+        <div class="pure-u">
+            <img width="128" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="${watchList[key].images[0]}">
+        </div>
+
+        <div class="pure-u-3-4">
+            <h5 class="email-name">${watchList[key].country}</h5>
+            <h4 class="email-subject">${watchList[key].name}</h4>
+            <p class="email-desc">
+                ${watchList[key].price}
+            </p>
+        </div>
+    </div>
+    `
+}
+
 var watchList = {};
     openWatch = function (key) {
         const email = document.getElementById("email-content");
@@ -87,6 +115,15 @@ var watchList = {};
     fetch('/watches.json')
     .then(async response => {
         watchList = await response.json();
+
+        // setOnPlace("new-1", "Winchester")
+        // setOnPlace("new-2", "PierreLannier")
+        setOnPlace("new-3", "KienzleSmaragd")
+
+        setOnPlace("recomended-3", "Darwil66")
+        setOnPlace("recomended-2", "SeikoH6015400")
+        setOnPlace("recomended-1", "SlavaSqare")
+
         const list = document.getElementById("list");
         let watchHtml = "";
         Object.keys(watchList).forEach(function(key, index) {

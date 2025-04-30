@@ -4,7 +4,7 @@
         "color": "Pozlata",
         "case_size": "30mm",
         "movement": "Mehanicki",
-        "country": "USSR",
+        "country": "SSSR",
         "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu, ne prelazi po sat/dva <br/> Preporuka za sat!",
         "price": "60e",
         "images": [
@@ -13,7 +13,7 @@
             "https://i.ibb.co/fGdpBf58/20250430-104443.jpg",
             "https://i.ibb.co/ZpN5HtSp/20250430-104607.jpg"
         ],
-        "bracelet": "Hirsch Lizardlook Braon - Kao nova"
+        "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm"
     },
     "SeikoH6015400": {
         "name": "Seiko H601-5400",
@@ -35,7 +35,7 @@
         "name": "Fossil Big Tic JR-7843",
         "color": "Celik",
         "case_size": "38mm",
-        "movement": "Quartz JR-7843",
+        "movement": "Quartz",
         "country": "Swiss",
         "description": " Ispravan i tacan, sa znakovima koriscenja. Originalna narukvica dosta kratka, mom manjem zgolbu stoji taman, ako imate veci zglob trebace Vam drugi kais <br/> Veoma redak model!",
         "price": "80e",
@@ -44,13 +44,13 @@
             "https://i.ibb.co/60CQyk0x/20250428-221050.jpg",
             "https://i.ibb.co/rG8d0dSZ/20250428-221117.jpg"
         ],
-        "bracelet": "Original"
+        "bracelet": "Original 18mm"
     },
     "Darwil66": {
         "name": "Darwil Special Flat Luxe 66",
         "color": "Celik",
         "case_size": "34mm",
-        "movement": "Quartz JR-7843",
+        "movement": "Automatic Darwil 7041",
         "country": "Swiss",
         "description": "Servisiran, ispravan i tacan. Pleksi savrsen, cifer sa finom patinom, vide se tragovi koriscenja na zadnjoj strani",
         "price": "50e",
@@ -83,7 +83,7 @@
         "name": "Kienzle Smaragd",
         "color": "Celik",
         "case_size": "34mm",
-        "movement": "Mehanicki",
+        "movement": "Mehanicki Kienzle 051e53",
         "country": "Nemacka",
         "description": "",
         "price": "40e",
@@ -94,5 +94,28 @@
             "https://i.ibb.co/ynYn2dvP/20250323-221131.jpg"
         ],
         "bracelet": "Kozna crna"
+    },
+    "PierreLannier": {
+        "name": "Pierre Lannier",
+        "color": "Pozlata",
+        "case_size": "34mm",
+        "movement": "Quartz Ronda",
+        "country": "Francuska",
+        "description": "",
+        "price": "20e",
+        "images": [],
+        "bracelet": "Kozna crna print 18mm"
+    }
+    ,
+    "Winchester": {
+        "name": "Winchester 1866",
+        "color": "Bela",
+        "case_size": "36mm",
+        "movement": "Quartz ETA 955.414",
+        "country": "USA / Swiss Mehanizam",
+        "description": "Sat kao sat u odlicnom stanju kao na slikama, originalna narukvica sa tragovima koriscenja na slici",
+        "price": "30e",
+        "images": [],
+        "bracelet": "Bela original 18mm"
     }
 }
