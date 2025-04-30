@@ -37,7 +37,7 @@
         "case_size": "38mm",
         "movement": "Quartz JR-7843",
         "country": "Swiss",
-        "description": "",
+        "description": " Ispravan i tacan, sa znakovima koriscenja. Originalna narukvica dosta kratka, mom manjem zgolbu stoji taman, ako imate veci zglob trebace Vam drugi kais <br/> Veoma redak model!",
         "price": "80e",
         "images": [
             "https://i.ibb.co/8L8kYQFJ/20250428-221043.jpg",
@@ -45,5 +45,22 @@
             "https://i.ibb.co/rG8d0dSZ/20250428-221117.jpg"
         ],
         "bracelet": "Original"
+    },
+    "Darwil66": {
+        "name": "Darwil Special Flat Luxe 66",
+        "color": "Celik",
+        "case_size": "34mm",
+        "movement": "Quartz JR-7843",
+        "country": "Swiss",
+        "description": "Servisiran, ispravan i tacan. Pleksi savrsen, cifer sa finom patinom, vide se tragovi koriscenja na zadnjoj strani",
+        "price": "50e",
+        "images": [
+            "https://i.ibb.co/LdM9m0GV/20250428-212537.jpg",
+            "https://i.ibb.co/Y4JHTKdW/20250428-212704.jpg",
+            "https://i.ibb.co/S4VkTK9P/20250428-212656.jpg",
+            "https://i.ibb.co/xVDMsMg/20250428-212526.jpg",
+            "https://i.ibb.co/LhnXLN7y/20250428-212741.jpg"
+        ],
+        "bracelet": "16mm Ritter Aligator kozni crni"
     }
 }
