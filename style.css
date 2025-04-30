@@ -306,7 +306,8 @@ a {
 }
 
 .slider {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
     overflow: hidden;
   }

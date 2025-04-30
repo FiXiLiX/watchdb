@@ -50,7 +50,7 @@ var watchList = {};
         for (let index = 0; index < watchList[key].images.length; index++) {
             slide.push(`<a href="#slide-${index+1}">${index+1}</a>`)
             slideImages.push(`<div id="slide-${index+1}">
-                        <img width="128" class="slide-img" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="${watchList[key].images[index]}">
+                        <img class="slide-img" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="${watchList[key].images[index]}">
                     </div>`)
         }
         email.innerHTML = `
