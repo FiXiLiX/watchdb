@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery of all available watches in my collection">
+    <title>Kovacevic Satovi - G-Shock DW-002BJ-6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <!-- 100% privacy-first analytics -->
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</head>
+<body>
+
+<div id="layout" class="content pure-g">
+    <div id="nav" >
+        <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
+
+        <div class="nav-inner">
+            <a href="/"><img width="100" height="128" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="/kovacevic_logo.png"></a>
+            
+
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a target="_blank" href="https://www.kupujemprodajem.com/filip-baterije/svi-oglasi/540735/1" class="pure-menu-link">KP <span class="email-count"></span></a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">+381611679564 <span class="email-count"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" style="width: 100%;">
+        <div class="email-content-header pure-g">
+            <div style="display: flex; align-items: center">
+                <a class="backButton" href="#${"menu-" + key}">Nazad</a>
+                <h1 class="email-content-title">G-Shock DW-002BJ-6</h1>
+            </div>
+        </div>
+
+        <div class="email-content-body">
+            <div class="slider">
+                <div class="slides">
+                    <div id="slide-1">
+    <img class="slide-img" alt="G-ShockDW-002" src="https://i.ibb.co/tMPs5s2G/20250501-143359.jpg">
+</div>
+<div id="slide-2">
+    <img class="slide-img" alt="G-ShockDW-002" src="https://i.ibb.co/KcLcqMdR/20250501-143627.jpg">
+</div>
+<div id="slide-3">
+    <img class="slide-img" alt="G-ShockDW-002" src="https://i.ibb.co/1tPx8yNR/20250501-143451.jpg">
+</div>
+<div id="slide-4">
+    <img class="slide-img" alt="G-ShockDW-002" src="https://i.ibb.co/ccp1h75x/20250501-143354.jpg">
+</div>
+<div id="slide-5">
+    <img class="slide-img" alt="G-ShockDW-002" src="https://i.ibb.co/C5Ty8GV0/20250501-143402.jpg">
+</div>
+                </div>
+                <a href="#slide-1">1</a>
+<a href="#slide-2">2</a>
+<a href="#slide-3">3</a>
+<a href="#slide-4">4</a>
+<a href="#slide-5">5</a>
+            </div>
+
+            <div style="margin-top:1em; text-align: left;">
+                <div class="property-container">
+                    <span class='property'>Boja: Crna</span>
+                    <span class='property'>Veličina kućišta: 48mm</span>
+                    <span class='property'>Mehanizam: Quartz</span>
+                    <span class='property'>Zemlja porekla: Japan</span>
+                    <span class='property'>Cena: 80e</span>
+                    <span class='property'>Narukvica: Original Atlantic celik 16mm</span>
+                </div>
+                <br/>Drugi model G-Shock-a, 1994/1995 Godina, veoma trazen kolekcionarski primerak <br/> U donjem delu kod dugmeta za svetlo plastika se odlomila pa je neprofesionalno zalepljena, vidljivo na slikama, sem toga potpuno ispravan <br/> Vise o samom modelu na <a target='_blank' href='https://shockbase.org/watches/watch_dyn.php?model=DW-002BJ-6&subseries=DW-002&series=002'>Linku</a>
+            </div>
+        </div>
+    </div>
+<script>
+    function getElements() {
+        return {
+            menu: document.getElementById('nav'),
+            menuLink: document.getElementById('menuLink')
+        };
+    }
+
+    function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/);
+        var length = classes.length;
+        var i = 0;
+
+        for (; i < length; i++) {
+            if (classes[i] === className) {
+                classes.splice(i, 1);
+                break;
+            }
+        }
+        // The className is not found
+        if (length === classes.length) {
+            classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+    }
+
+    function toggleMenu() {
+        var active = 'active';
+        var elements = getElements();
+
+        toggleClass(elements.menu, active);
+    }
+
+    function handleEvent(e) {
+        var elements = getElements();
+
+        if (e.target.id === elements.menuLink.id) {
+            toggleMenu();
+            e.preventDefault();
+        } else if (elements.menu.className.indexOf('active') !== -1) {
+            toggleMenu();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('click', handleEvent);
+    });
+</script>
+</body>
+</html>

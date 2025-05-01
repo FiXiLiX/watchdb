@@ -31,7 +31,7 @@
         ],
         "bracelet": "Kozna, crna 20mm"
     },
-    "Atlantic Grand Prix": {
+    "AtlanticGrandPrix": {
         "name": "Atlantic Grand Prix",
         "color": "Celik",
         "case_size": "28mm",
@@ -49,7 +49,7 @@
         ],
         "bracelet": "Original Atlantic celik 16mm"
     },
-    "G-Shock DW-002": {
+    "G-ShockDW-002": {
         "name": "G-Shock DW-002BJ-6",
         "color": "Crna",
         "case_size": "48mm",
