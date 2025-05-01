@@ -31,6 +31,22 @@
         ],
         "bracelet": "Kozna, crna 20mm"
     },
+    "OmegaDeVille": {
+        "name": "Omega De Ville",
+        "color": "Pozlata",
+        "case_size": "22mm",
+        "movement": "Quartz",
+        "country": "Swiss",
+        "description": "Potpuno ispravna, pozlata se malo gubi sa strane, kao na slikama",
+        "price": "180e",
+        "images": [
+            "https://i.ibb.co/99w4PW13/20250501-210426.jpg",
+            "https://i.ibb.co/HD31R2kD/20250501-210445.jpg",
+            "https://i.ibb.co/v4zjH11k/20250501-210448.jpg",
+            "https://i.ibb.co/21r22yP1/20250501-210455.jpg"
+        ],
+        "bracelet": "Kozna 12mm Nova"
+    },
     "AtlanticGrandPrix": {
         "name": "Atlantic Grand Prix",
         "color": "Celik",
@@ -245,6 +261,35 @@
             "https://i.ibb.co/WNs5Jfyq/20250501-152510.jpg",
             "https://i.ibb.co/yB6Y1gCZ/20250501-152514.jpg",
             "https://i.ibb.co/DHgF1j86/17461063700932349226241765080978.jpg"
+        ],
+        "bracelet": "Celik 18mm"
+    },
+    "JungHansMegaSilver": {
+        "name": "Junghans Mega",
+        "color": "Crna",
+        "case_size": "22mm",
+        "movement": "Quartz ETA",
+        "country": "Quartz",
+        "description": "Keramicko kuciste, u jako dobrom stanju, po meni jedan od lepsih zenskih satova",
+        "price": "40e",
+        "images": [
+            "https://i.ibb.co/R4vN09Yv/20250501-211402.jpg",
+            "https://i.ibb.co/PvvNFSfR/20250501-211406.jpg",
+            "https://i.ibb.co/mrSSxzFN/20250501-211424.jpg",
+            "https://i.ibb.co/ynJZRXcN/20250501-211545.jpg"
+        ],
+        "bracelet": "Kozna Crna 14mm"
+    },
+    "FlikFlak": {
+        "name": "Flik Flak",
+        "color": "Razno",
+        "case_size": "18mm",
+        "movement": "Quartz ETA",
+        "country": "Swiss",
+        "description": "Stanje kao na slikama, cena po komadu",
+        "price": "10e",
+        "images": [
+            "https://i.ibb.co/GQFCYMnZ/20250501-211017.jpg"
         ],
         "bracelet": "Celik 18mm"
     }
