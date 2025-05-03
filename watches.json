@@ -37,7 +37,7 @@
         "case_size": "22mm",
         "movement": "Quartz",
         "country": "Swiss",
-        "description": "Potpuno ispravna, pozlata se malo gubi sa strane, kao na slikama",
+        "description": "Potpuno ispravna, malo skinuta pozlata sa ivice, kao na slikama",
         "price": "180e",
         "images": [
             "https://i.ibb.co/99w4PW13/20250501-210426.jpg",
@@ -46,6 +46,23 @@
             "https://i.ibb.co/21r22yP1/20250501-210455.jpg"
         ],
         "bracelet": "Kozna 12mm Nova"
+    },
+    "Omikron21": {
+        "name": "Omikron",
+        "color": "Pozlata",
+        "case_size": "38mm",
+        "movement": "Quartz",
+        "country": "Swiss",
+        "description": "Potpuno ispravna i tacna, stanje kao na slikama",
+        "price": "40e",
+        "images": [
+            "https://i.ibb.co/R46JH2Q1/20250503-153401.jpg",
+            "https://i.ibb.co/qLV8g2Bg/20250503-153338.jpg",
+            "https://i.ibb.co/jZ8cm4tj/20250503-153405.jpg",
+            "https://i.ibb.co/BVStTC8n/20250503-153504.jpg",
+            "https://i.ibb.co/BHk7tknW/20250503-153412.jpg"
+        ],
+        "bracelet": "Fixo-Flax 18mm"
     },
     "AtlanticGrandPrix": {
         "name": "Atlantic Grand Prix",
