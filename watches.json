@@ -297,6 +297,23 @@
         ],
         "bracelet": "Kozna Crna 14mm"
     },
+    "SwatchGK725": {
+        "name": "Swatch GK725 Sanddune",
+        "color": "Braon",
+        "case_size": "34mm",
+        "movement": "Quartz ETA",
+        "country": "Swiss",
+        "description": "Stanje kao na slikama",
+        "price": "20e",
+        "images": [
+            "https://i.ibb.co/Vc5R7Xmr/20250503-182236.jpg",
+            "https://i.ibb.co/4ncn8vJW/20250503-182230.jpg",
+            "https://i.ibb.co/DPrSh9fL/20250503-182231.jpg",
+            "https://i.ibb.co/PZ5ZnGfn/20250503-182242.jpg",
+            "https://i.ibb.co/GfwSRV0X/20250503-182327.jpg"
+        ],
+        "bracelet": "Celik 18mm"
+    },
     "FlikFlak": {
         "name": "Flik Flak",
         "color": "Razno",
