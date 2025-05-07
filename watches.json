@@ -203,8 +203,8 @@
         "case_size": "34mm",
         "movement": "Mehanicki",
         "country": "Istocna Nemacka",
-        "description": "Cifer, pleksi i pozlata odlicni, minutara oksidirala, poledjina izudarana. Narukvica kao nova",
-        "price": "30e",
+        "description": "Cifer, pleksi i pozlata odlicni, minutara malo oksidirala. Narukvica kao nova",
+        "price": "20e",
         "images": [
             "https://i.ibb.co/TBZ2kWpw/20250501-140316.jpg",
             "https://i.ibb.co/jZVt2qLc/20250501-140320.jpg",
@@ -230,6 +230,23 @@
             "https://i.ibb.co/9H9r2ksQ/20250501-141647.jpg"
         ],
         "bracelet": "Crna Swatch Original"
+    },
+    "PhilipePechard34": {
+        "name": "Philipe Pechard 34mm",
+        "color": "Crna",
+        "case_size": "34mm",
+        "movement": "ETA 902.105 Quartz",
+        "country": "Danska",
+        "description": "Kao nov!",
+        "price": "30e",
+        "images":[ 
+            "https://i.ibb.co/p6Tn5Rjm/17466096036687265804460092202221.jpg",
+            "https://i.ibb.co/5gp8J18v/20250507-111348.jpg",
+            "https://i.ibb.co/v45HWG1q/20250507-111324.jpg",
+            "https://i.ibb.co/FLDJR7Cn/20250507-111306.jpg",
+            "https://i.ibb.co/j9YmBcNQ/20250507-111320.jpg"
+        ],
+        "bracelet": "Crna 18mm"
     },
     "Tourist": {
         "name": "Tourist",
