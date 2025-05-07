@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <!-- Primary Meta Tags -->
-    <title>Kovacevic Satovi - Flik Flak</title>
+    <title>Kovacevic Satovi</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta name="title" content="Kovacevic Satovi" />
     <meta name="description" content="Polovni satovi vrhunskih brendova. Servisirani i spremni za nosenje!" />
@@ -32,7 +31,7 @@
 <body>
 
 <div id="layout" class="content pure-g">
-    <div id="nav" >
+    <div id="nav" class="pure-u">
         <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
@@ -49,70 +48,26 @@
         </div>
     </div>
 
-    <div id="main" style="width: 100%;">
-        <div class="email-content-header pure-g">
-            <div style="display: flex; align-items: center">
-                <h1 class="email-content-title">Flik Flak</h1>
+    <div id="main" class="pure-u-1" style="width: 100%;">
+        <div id="email-content" class="email-content" style="display:flex; flex-wrap: wrap; justify-content: center; align-items: center;width: 100%;">
+            
+        
+            <div style="text-align: center;">
+                <h2>Hvala na poverenju!</h2>
+                <h4>Uskoro ce te dobiti podatke o paketu SMS-om</h4>
+                <a href="/">Nazad na pocetnu</a>
             </div>
-        </div>
-
-        <div class="email-content-body">
-            <div class="slider">
-                <div class="slides">
-                    <div id="slide-1">
-    <img class="slide-img" alt="FlikFlak" src="https://i.ibb.co/GQFCYMnZ/20250501-211017.jpg">
-</div>
-                </div>
-                <a href="#slide-1">1</a>
-            </div>
-
-            <div style="margin-top:1em; text-align: left;">
-                <div class="property-container">
-                    <span class='property'>Boja: Razno</span>
-                    <span class='property'>Veličina kućišta: 18mm</span>
-                    <span class='property'>Mehanizam: Quartz ETA</span>
-                    <span class='property'>Zemlja porekla: Swiss</span>
-                    <span class='property'>Cena: 10e</span>
-                    <span class='property'>Narukvica: Celik 18mm</span>
-                </div>
-                <br/>Stanje kao na slikama, cena po komadu
-            </div>
-
-            <form class="pure-form pure-form-stacked" style="margin-top: 5em;"   action="/success.html"  name="order" method="POST" data-netlify="true">
-                <fieldset>
-                    <legend>Porucite</legend>
-                    <div class="pure-g">
-                        <input name="watch_name" type="hidden" value="Flik Flak"/>
-                        <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="multi-first-name">Ime i Prezime</label>
-                            <input id="multi-first-name" class="pure-u-23-24" name="name" type="text" required="" />
-                        </div>
-                        <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="multi-last-name">Mesto</label>
-                            <input id="multi-last-name" class="pure-u-23-24" name="place" type="text" required="" />
-                        </div>
-                        <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="multi-email">Ulica i broj</label>
-                            <input id="multi-email" class="pure-u-23-24" name="address" type="text" required="" />
-                        </div>
-                        <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="multi-phone">Broj Telefona</label>
-                            <input id="multi-phone" class="pure-u-23-24" name="phone_number" type="text" required="" />
-                        </div>
-                        <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="multi-info">Dodatne Informacije</label>
-                            <input id="multi-info" class="pure-u-23-24" name="additional_info" type="text" />
-                        </div>
-                    </div>
-                    <label for="multi-terms" class="pure-checkbox">
-                        Nakon popune, dobicete SMS o dospecu i daljim koracima
-                    </label>
-                    <button type="submit" class="pure-button pure-button-primary">Naruci</button>
-                </fieldset>
-            </form>
+        
         </div>
     </div>
+</div>
+<!-- Script to make the Menu link work -->
+<!-- Just stripped down version of the js/ui.js script for the side-menu layout -->
 <script>
+    function openWatch(watchId) {
+        // Your JavaScript logic here
+        window.location.href = `/watches/${watchId}.html`;
+    }
     function getElements() {
         return {
             menu: document.getElementById('nav'),

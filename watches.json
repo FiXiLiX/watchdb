@@ -49,7 +49,7 @@
     },
     "Omikron21": {
         "name": "Omikron",
-        "color": "Pozlata",
+        "color": "Celik",
         "case_size": "38mm",
         "movement": "Automatic",
         "country": "Swiss",
@@ -62,7 +62,7 @@
             "https://i.ibb.co/BVStTC8n/20250503-153504.jpg",
             "https://i.ibb.co/BHk7tknW/20250503-153412.jpg"
         ],
-        "bracelet": "Fixo-Flax 18mm"
+        "bracelet": "Navy Blue 18mm Nova Kozna"
     },
     "AtlanticGrandPrix": {
         "name": "Atlantic Grand Prix",
@@ -303,7 +303,7 @@
         "color": "Crna",
         "case_size": "22mm",
         "movement": "Quartz ETA",
-        "country": "Quartz",
+        "country": "Nemacka",
         "description": "Keramicko kuciste, u jako dobrom stanju, po meni jedan od lepsih zenskih satova",
         "price": "40e",
         "images": [
