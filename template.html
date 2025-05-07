@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
     <link rel="stylesheet" href="/style.css">
     <!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
@@ -41,7 +42,8 @@
             <div class="pure-menu">
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item"><a target="_blank" href="https://www.kupujemprodajem.com/filip-baterije/svi-oglasi/540735/1" class="pure-menu-link">KP <span class="email-count"></span></a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">+381611679564 <span class="email-count"></span></a></li>
+                    <li class="pure-menu-item"><a target="_blank" href="https://www.instagram.com/kovacevic.satovi/" class="pure-menu-link">Instagram <span class="email-count"></span></a></li>
+                    <li class="pure-menu-item"><a href="tel:+381611679564" class="pure-menu-link">+381611679564 <span class="email-count"></span></a></li>
                 </ul>
             </div>
         </div>
@@ -50,7 +52,6 @@
     <div id="main" style="width: 100%;">
         <div class="email-content-header pure-g">
             <div style="display: flex; align-items: center">
-                <a class="backButton" href="#${"menu-" + key}">Nazad</a>
                 <h1 class="email-content-title">{{NAME}}</h1>
             </div>
         </div>
@@ -74,6 +75,39 @@
                 </div>
                 <br/>{{DESCRIPTION}}
             </div>
+
+            <form class="pure-form pure-form-stacked" style="margin-top: 5em;"   action="/success.html"  name="order" method="POST" data-netlify="true">
+                <fieldset>
+                    <legend>Porucite</legend>
+                    <div class="pure-g">
+                        <input name="watch_name" type="hidden" value="{{NAME}}"/>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-first-name">Ime i Prezime</label>
+                            <input id="multi-first-name" class="pure-u-23-24" name="name" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-last-name">Mesto</label>
+                            <input id="multi-last-name" class="pure-u-23-24" name="place" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-email">Ulica i broj</label>
+                            <input id="multi-email" class="pure-u-23-24" name="address" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-phone">Broj Telefona</label>
+                            <input id="multi-phone" class="pure-u-23-24" name="phone_number" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-info">Dodatne Informacije</label>
+                            <input id="multi-info" class="pure-u-23-24" name="additional_info" type="text" />
+                        </div>
+                    </div>
+                    <label for="multi-terms" class="pure-checkbox">
+                        Nakon popune, dobicete SMS o dospecu i daljim koracima
+                    </label>
+                    <button type="submit" class="pure-button pure-button-primary">Naruci</button>
+                </fieldset>
+            </form>
         </div>
     </div>
 <script>
