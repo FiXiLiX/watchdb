@@ -15,6 +15,23 @@
         ],
         "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm"
     },
+    "NivadaBabyWhale": {
+        "name": "Nivada Baby Whale",
+        "color": "Pozlata",
+        "case_size": "34mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "Pozlata u odlicnom stanju, potpuno ispravan i tacan",
+        "price": "4500din",
+        "images": [
+            "https://i.ibb.co/LhCmsc9G/20250910-205857-min.jpg",
+            "https://i.ibb.co/vvM1VnhW/20250910-205841-min.jpg",
+            "https://i.ibb.co/5WyGSQ9t/20250910-205835-min.jpg",
+            "https://i.ibb.co/F1xYfh9/20250910-205828-min.jpg",
+            "https://i.ibb.co/6RYrNvyY/20250910-205831-min.jpg"
+        ],
+        "bracelet": "Kozna, braon 18mm"
+    },
     "SeikoH6015400": {
         "name": "Seiko H601-5400",
         "color": "Celik",
@@ -68,7 +85,7 @@
         "name": "Atlantic Grand Prix",
         "color": "Celik",
         "case_size": "28mm",
-        "movement": "Automatik ETA 2678",
+        "movement": "Automatic ETA 2678",
         "country": "Swiss",
         "description": "Tacan, steta na ciferu kod day/date-a",
         "price": "10000din",
@@ -218,7 +235,7 @@
         "name": "Swatch WR Automatic",
         "color": "Crna",
         "case_size": "36mm",
-        "movement": "Automatik",
+        "movement": "Automatic",
         "country": "Swiss",
         "description": "U odlicnom stanju!",
         "price": "4000din",
