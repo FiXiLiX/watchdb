@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="/style.css">
     <!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <!-- Primary Meta Tags -->
-    <title>Kovacevic Satovi</title>
+    <title>Kovacevic Satovi - G-Shock DW-5900</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta name="title" content="Kovacevic Satovi" />
     <meta name="description" content="Polovni satovi vrhunskih brendova. Servisirani i spremni za nosenje!" />
@@ -31,7 +32,7 @@
 <body>
 
 <div id="layout" class="content pure-g">
-    <div id="nav" class="pure-u">
+    <div id="nav" >
         <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
@@ -47,45 +48,70 @@
         </div>
     </div>
 
-    <div id="main" class="pure-u-1" style="width: 100%;">
-        <div class="filters" style="padding-top:1em; margin: 2em;">
-            <div class="select-wrap">
-                <select id="country" class="simple-select" aria-describedby="country-hint">
-                    <option value="">Pol</option>
-                    <option value="us">Muski</option>
-                    <option value="us">Zenski</option>
-                    <option value="us">Unisex</option>
-                    <option value="us">Deciji</option>
-                </select>
-                <select id="country" class="simple-select" aria-describedby="country-hint">
-                    <option value="">Brend</option>
-                    <option value="us">Casio</option>
-                    <option value="us">Seiko</option>
-                    <option value="us">Omega</option>
-                    <option value="us">Swatch</option>
-                </select>
-                <select id="country" class="simple-select" aria-describedby="country-hint">
-                    <option value="">Zemlja</option>
-                    <option value="us">Swiss</option>
-                    <option value="us">Japan</option>
-                    <option value="us">Nemacka</option>
-                    <option value="us">USA</option>
-                </select>
-                </div>
+    <div id="main" style="width: 100%;">
+        <div class="email-content-header pure-g">
+            <div style="display: flex; align-items: center">
+                <h1 class="email-content-title">G-Shock DW-5900</h1>
             </div>
         </div>
-        <div id="email-content" class="email-content" style="display:flex; flex-wrap: wrap; justify-content: center; align-items: center;width: 100%;">
-            {{watches}}
+
+        <div class="email-content-body">
+            <div class="slider">
+                <div class="slides">
+                    <div id="slide-1">
+    <img class="slide-img" alt="GShockDW5900" src="https://i.ibb.co/8nWhXDVQ/20250913-192823301-removebg-preview.png">
+</div>
+                </div>
+                <a href="#slide-1">1</a>
+            </div>
+
+            <div style="margin-top:1em; text-align: left;">
+                <div class="property-container">
+                    <span class='property'>Boja: Crna</span>
+                    <span class='property'>Veličina kućišta: 30mm</span>
+                    <span class='property'>Mehanizam: Quartz</span>
+                    <span class='property'>Zemlja porekla: Japan</span>
+                    <span class='property'>Cena: 7000din</span>
+                    <span class='property'>Narukvica: Originalna Gumena</span>
+                </div>
+                <br/>Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu, ne prelazi po sat/dva <br/> Preporuka za sat!
+            </div>
+
+            <form class="pure-form pure-form-stacked" style="margin-top: 5em;"   action="/success.html"  name="order" method="POST" data-netlify="true">
+                <fieldset>
+                    <legend>Porucite</legend>
+                    <div class="pure-g">
+                        <input name="watch_name" type="hidden" value="G-Shock DW-5900"/>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-first-name">Ime i Prezime</label>
+                            <input id="multi-first-name" class="pure-u-23-24" name="name" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-last-name">Mesto</label>
+                            <input id="multi-last-name" class="pure-u-23-24" name="place" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-email">Ulica i broj</label>
+                            <input id="multi-email" class="pure-u-23-24" name="address" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-phone">Broj Telefona</label>
+                            <input id="multi-phone" class="pure-u-23-24" name="phone_number" type="text" required="" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="multi-info">Dodatne Informacije</label>
+                            <input id="multi-info" class="pure-u-23-24" name="additional_info" type="text" />
+                        </div>
+                    </div>
+                    <label for="multi-terms" class="pure-checkbox">
+                        Nakon popune, dobicete SMS o dospecu i daljim koracima
+                    </label>
+                    <button type="submit" class="pure-button pure-button-primary">Naruci</button>
+                </fieldset>
+            </form>
         </div>
     </div>
-</div>
-<!-- Script to make the Menu link work -->
-<!-- Just stripped down version of the js/ui.js script for the side-menu layout -->
 <script>
-    function openWatch(watchId) {
-        // Your JavaScript logic here
-        window.location.href = `/watches/${watchId}.html`;
-    }
     function getElements() {
         return {
             menu: document.getElementById('nav'),

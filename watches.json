@@ -15,6 +15,19 @@
         ],
         "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm"
     },
+    "GShockDW5900": {
+        "name": "G-Shock DW-5900",
+        "color": "Crna",
+        "case_size": "30mm",
+        "movement": "Quartz",
+        "country": "Japan",
+        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu, ne prelazi po sat/dva <br/> Preporuka za sat!",
+        "price": "7000din",
+        "images": [
+            "https://i.ibb.co/8nWhXDVQ/20250913-192823301-removebg-preview.png"
+        ],
+        "bracelet": "Originalna Gumena"
+    },
     "NivadaBabyWhale": {
         "name": "Nivada Baby Whale",
         "color": "Pozlata",

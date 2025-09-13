@@ -409,3 +409,75 @@ a {
 .featured {
     max-width: 300px;
 }
+
+/* Wrapper to allow custom arrow and sizing */
+    .select-wrap{
+      /* position:relative; */
+      /* display:inline-block; */
+      width:100%;
+      display: flex;
+    }
+
+    /* Native select styling */
+    select.simple-select{
+      -webkit-appearance: none; /* remove native arrow in Safari/Chrome */
+      -moz-appearance: none;
+      appearance: none;
+      width:100%;
+      padding:10px 40px 10px 12px; /* right padding leaves room for arrow */
+      font-size:15px;
+      border:1px solid #e6e9ee;
+      border-radius:8px;
+      background:transparent;
+      color:var(--text);
+      outline:none;
+      transition:box-shadow .12s ease, border-color .12s ease;
+      cursor:pointer;
+    }
+
+    /* Hover / focus */
+    select.simple-select:hover{
+      border-color:#d0d7ea;
+    }
+    select.simple-select:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 4px rgba(37,99,235,0.12);
+    }
+
+    /* Disabled state */
+    select.simple-select:disabled{
+      opacity:0.6;
+      cursor:not-allowed;
+      background:linear-gradient(180deg,#fff,#fbfdff);
+    }
+
+    /* Custom arrow using a pseudo-element on the wrapper */
+    .select-wrap::after{
+      content: "";
+      position:absolute;
+      pointer-events:none;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      width:14px;
+      height:14px;
+      background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                        linear-gradient(-45deg, transparent 50%, var(--muted) 50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 50% 50%;
+      opacity:0.9;
+    }
+
+    /* Make arrow a bit darker when focused */
+    .select-wrap:focus-within::after{
+      background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+                        linear-gradient(-45deg, transparent 50%, var(--accent) 50%);
+    }
+
+    /* Small helper text */
+    .hint{
+      margin-top:8px;
+      font-size:13px;
+      color:var(--muted);
+    }
