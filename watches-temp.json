@@ -1,0 +1,377 @@
+{
+    "SlavaSqare": {
+        "name": "Slava 2412",
+        "color": "Pozlata",
+        "case_size": "30mm",
+        "movement": "Mehanicki",
+        "country": "SSSR",
+        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu, ne prelazi po sat/dva <br/> Preporuka za sat!",
+        "price": "7000din",
+        "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm",
+        "images": [
+            "https://i.ibb.co/Wv4V5H35/20250430-104434.jpg",
+            "https://i.ibb.co/Q3x8frjd/20250430-104430.jpg",
+            "https://i.ibb.co/fGdpBf58/20250430-104443.jpg",
+            "https://i.ibb.co/ZpN5HtSp/20250430-104607.jpg"
+        ]
+    },
+    "GShockDW5900": {
+        "name": "G-Shock DW-5900",
+        "color": "Crna",
+        "case_size": "30mm",
+        "movement": "Quartz",
+        "country": "Japan",
+        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu, ne prelazi po sat/dva <br/> Preporuka za sat!",
+        "price": "7000din",
+        "images": [
+            "https://i.ibb.co/8nWhXDVQ/20250913-192823301-removebg-preview.png"
+        ],
+        "bracelet": "Originalna Gumena"
+    },
+    "NivadaBabyWhale": {
+        "name": "Nivada Baby Whale",
+        "color": "Pozlata",
+        "case_size": "34mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "Pozlata u odlicnom stanju, potpuno ispravan i tacan",
+        "price": "4500din",
+        "images": [
+            "https://i.ibb.co/6RYrNvyY/20250910-205831-min.jpg",
+            "https://i.ibb.co/F1xYfh9/20250910-205828-min.jpg",
+            "https://i.ibb.co/5WyGSQ9t/20250910-205835-min.jpg",
+            "https://i.ibb.co/LhCmsc9G/20250910-205857-min.jpg",
+            "https://i.ibb.co/vvM1VnhW/20250910-205841-min.jpg"
+        ],
+        "bracelet": "Kozna, braon 18mm"
+    },
+    "SeikoH6015400": {
+        "name": "Seiko H601-5400",
+        "color": "Celik",
+        "case_size": "34mm",
+        "movement": "Quartz H601",
+        "country": "Japan",
+        "description": "Par ogrebotinica na staklu i metalu, neprimetno pri nosenju, nisam nasao u boljem stanju bilo gde na internetu da je na prodaju, svi dugmici rade, alarm, datum. . .",
+        "price": "9000din",
+        "images": [
+            "https://i.ibb.co/6JFStNgT/20250428-210711.jpg",
+            "https://i.ibb.co/dJBmbfcd/20250428-210923.jpg",
+            "https://i.ibb.co/4Q8XssD/20250428-210705.jpg",
+            "https://i.ibb.co/fVH8k3qy/20250428-210830.jpg"
+        ],
+        "bracelet": "Kozna, crna 20mm"
+    },
+    "OmegaDeVille": {
+        "name": "Omega De Ville",
+        "color": "Pozlata",
+        "case_size": "22mm",
+        "movement": "Quartz",
+        "country": "Swiss",
+        "description": "Potpuno ispravna, malo skinuta pozlata sa ivice, kao na slikama",
+        "price": "20000din",
+        "images": [
+            "https://i.ibb.co/99w4PW13/20250501-210426.jpg",
+            "https://i.ibb.co/HD31R2kD/20250501-210445.jpg",
+            "https://i.ibb.co/v4zjH11k/20250501-210448.jpg",
+            "https://i.ibb.co/21r22yP1/20250501-210455.jpg"
+        ],
+        "bracelet": "Kozna 12mm Nova"
+    },
+    "Omikron21": {
+        "name": "Omikron",
+        "color": "Celik",
+        "case_size": "38mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "Potpuno ispravna i tacna, stanje kao na slikama",
+        "price": "6000din",
+        "images": [
+            "https://i.ibb.co/m54H3L8S/20250506-184722.jpg",
+            "https://i.ibb.co/9kbDpyN2/20250506-185637.jpg",
+            "https://i.ibb.co/KzpTFqxw/20250506-185633.jpg",
+            "https://i.ibb.co/3yZ44Ycy/20250506-184718.jpg",
+            "https://i.ibb.co/6RRLXKjW/20250506-185657.jpg"
+        ],
+        "bracelet": "Navy Blue 18mm Nova Kozna"
+    },
+    "AtlanticGrandPrix": {
+        "name": "Atlantic Grand Prix",
+        "color": "Celik",
+        "case_size": "28mm",
+        "movement": "Automatic ETA 2678",
+        "country": "Swiss",
+        "description": "Tacan, steta na ciferu kod day/date-a",
+        "price": "10000din",
+        "images": [
+            "https://i.ibb.co/7dQXy4hj/20250501-143705.jpg",
+            "https://i.ibb.co/cXb2jvrd/20250501-143708.jpg",
+            "https://i.ibb.co/k6XWz8Dc/20250501-143711.jpg",
+            "https://i.ibb.co/5XbVcp9V/20250501-143714.jpg",
+            "https://i.ibb.co/RkmhwnF4/20250501-143832.jpg",
+            "https://i.ibb.co/Ldw0TKg1/20250501-143724.jpg"
+        ],
+        "bracelet": "Original Atlantic celik 16mm"
+    },
+    "G-ShockDW-002": {
+        "name": "G-Shock DW-002BJ-6",
+        "color": "Crna",
+        "case_size": "48mm",
+        "movement": "Quartz",
+        "country": "Japan",
+        "description": "Drugi model G-Shock-a, 1994/1995 Godina, veoma trazen kolekcionarski primerak <br/> U donjem delu kod dugmeta za svetlo plastika se odlomila pa je neprofesionalno zalepljena, vidljivo na slikama, sem toga potpuno ispravan <br/> Vise o samom modelu na <a target='_blank' href='https://shockbase.org/watches/watch_dyn.php?model=DW-002BJ-6&subseries=DW-002&series=002'>Linku</a>",
+        "price": "9000din",
+        "images": [
+            "https://i.ibb.co/tMPs5s2G/20250501-143359.jpg",
+            "https://i.ibb.co/KcLcqMdR/20250501-143627.jpg",
+            "https://i.ibb.co/1tPx8yNR/20250501-143451.jpg",
+            "https://i.ibb.co/ccp1h75x/20250501-143354.jpg",
+            "https://i.ibb.co/C5Ty8GV0/20250501-143402.jpg"
+        ],
+        "bracelet": "Original Atlantic celik 16mm"
+    },
+    "FossilBigTic": {
+        "name": "Fossil Big Tic JR-7843",
+        "color": "Celik",
+        "case_size": "38mm",
+        "movement": "Quartz",
+        "country": "Swiss",
+        "description": " Ispravan i tacan, sa znakovima koriscenja. Originalna narukvica dosta kratka, mom manjem zgolbu stoji taman, ako imate veci zglob trebace Vam drugi kais <br/> Veoma redak model!",
+        "price": "8000din",
+        "images": [
+            "https://i.ibb.co/8L8kYQFJ/20250428-221043.jpg",
+            "https://i.ibb.co/60CQyk0x/20250428-221050.jpg",
+            "https://i.ibb.co/rG8d0dSZ/20250428-221117.jpg"
+        ],
+        "bracelet": "Original 18mm"
+    },
+    "Darwil66": {
+        "name": "Darwil Special Flat Luxe 66",
+        "color": "Celik",
+        "case_size": "34mm",
+        "movement": "Automatic Darwil 7041",
+        "country": "Swiss",
+        "description": "Servisiran, ispravan i tacan. Pleksi savrsen, cifer sa finom patinom, vide se tragovi koriscenja na zadnjoj strani",
+        "price": "6000din",
+        "images": [
+            "https://i.ibb.co/LdM9m0GV/20250428-212537.jpg",
+            "https://i.ibb.co/Y4JHTKdW/20250428-212704.jpg",
+            "https://i.ibb.co/S4VkTK9P/20250428-212656.jpg",
+            "https://i.ibb.co/xVDMsMg/20250428-212526.jpg",
+            "https://i.ibb.co/LhnXLN7y/20250428-212741.jpg"
+        ],
+        "bracelet": "16mm Ritter Aligator kozni crni"
+    },
+    "SwatchTheBeep": {
+        "name": "Swatch The Beep",
+        "color": "Plava",
+        "case_size": "34mm",
+        "movement": "Quartz",
+        "country": "Swiss",
+        "description": "Swatch pejdzer/pager, potpuno ispravan u odlicnom stanju",
+        "price": "4500din",
+        "images": [
+            "https://i.ibb.co/Ndb9gPZZ/20250323-220500.jpg",
+            "https://i.ibb.co/sdXxHty4/20250323-220520.jpg",
+            "https://i.ibb.co/N2NVJ9VP/20250323-220504.jpg",
+            "https://i.ibb.co/Y4H88NSx/20250323-220554.jpg"
+        ],
+        "bracelet": "Original"
+    },
+    "KienzleSmaragd": {
+        "name": "Kienzle Smaragd",
+        "color": "Celik",
+        "case_size": "34mm",
+        "movement": "Mehanicki Kienzle 051e53",
+        "country": "Nemacka",
+        "description": "Manje ostecenje na pleksiju kod 'Made in Germany' teksta",
+        "price": "4800din",
+        "images": [
+            "https://i.ibb.co/Lz3fskhJ/20250323-221105.jpg",
+            "https://i.ibb.co/JWDN2q57/20250323-221111.jpg",
+            "https://i.ibb.co/bjTwzWvf/20250323-221109.jpg",
+            "https://i.ibb.co/ynYn2dvP/20250323-221131.jpg"
+        ],
+        "bracelet": "Kozna crna"
+    },
+    "PierreLannier": {
+        "name": "Pierre Lannier",
+        "color": "Pozlata",
+        "case_size": "34mm",
+        "movement": "Quartz Ronda",
+        "country": "Francuska",
+        "description": "",
+        "price": "3000din",
+        "images": [
+            "https://i.ibb.co/S45SnWgp/20250430-184937.jpg",
+            "https://i.ibb.co/0VKZ4Gpp/20250430-184941.jpg",
+            "https://i.ibb.co/qYVz8gQs/20250430-184951.jpg",
+            "https://i.ibb.co/HT92cT1t/20250430-185031.jpg"
+        ],
+        "bracelet": "Kozna crna print 18mm"
+    },
+    "Winchester": {
+        "name": "Winchester 1866",
+        "color": "Bela",
+        "case_size": "36mm",
+        "movement": "Quartz ETA 955.414",
+        "country": "USA / Swiss Mehanizam",
+        "description": "Sat kao sat u odlicnom stanju kao na slikama, originalna narukvica sa tragovima koriscenja na slici",
+        "price": "3500din",
+        "images": [
+            "https://i.ibb.co/LXhtqgSt/20250430-190538.jpg",
+            "https://i.ibb.co/N6ZL1ycd/20250430-190541.jpg",
+            "https://i.ibb.co/Q7QtD08Q/20250430-190547.jpg",
+            "https://i.ibb.co/DHXFRPDs/20250430-190600.jpg",
+            "https://i.ibb.co/wvZJmdT/20250430-190550.jpg",
+            "https://i.ibb.co/PzhVNpmw/1746099389078488330109354469026.jpg"
+        ],
+        "bracelet": "Bela original 18mm"
+    },
+    "RuhlaCrna": {
+        "name": "Ruhla De Luxe",
+        "color": "Pozlata",
+        "case_size": "34mm",
+        "movement": "Mehanicki",
+        "country": "Istocna Nemacka",
+        "description": "Cifer, pleksi i pozlata odlicni, minutara malo oksidirala. Narukvica kao nova",
+        "price": "2400din",
+        "images": [
+            "https://i.ibb.co/TBZ2kWpw/20250501-140316.jpg",
+            "https://i.ibb.co/jZVt2qLc/20250501-140320.jpg",
+            "https://i.ibb.co/Z1hfqWpN/20250501-140324.jpg",
+            "https://i.ibb.co/dRHZX9v/20250501-140328.jpg",
+            "https://i.ibb.co/231SQzxY/17461014570015034750017790852478.jpg"
+        ],
+        "bracelet": "Plava, print 18mm"
+    },
+    "SwatchAutomatic": {
+        "name": "Swatch WR Automatic",
+        "color": "Crna",
+        "case_size": "36mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "U odlicnom stanju!",
+        "price": "4000din",
+        "images": [
+            "https://i.ibb.co/kT3sVh8/20250501-141634.jpg",
+            "https://i.ibb.co/KcS6VJ0H/20250501-141643.jpg",
+            "https://i.ibb.co/ZRDwKf82/20250501-141645.jpg",
+            "https://i.ibb.co/CKrYh0rX/20250501-141735.jpg",
+            "https://i.ibb.co/9H9r2ksQ/20250501-141647.jpg"
+        ],
+        "bracelet": "Crna Swatch Original"
+    },
+    "PhilipePechard34": {
+        "name": "Philipe Pechard 34mm",
+        "color": "Crna",
+        "case_size": "34mm",
+        "movement": "ETA 902.105 Quartz",
+        "country": "Danska",
+        "description": "Kao nov!",
+        "price": "3600din",
+        "images": [
+            "https://i.ibb.co/p6Tn5Rjm/17466096036687265804460092202221.jpg",
+            "https://i.ibb.co/5gp8J18v/20250507-111348.jpg",
+            "https://i.ibb.co/v45HWG1q/20250507-111324.jpg",
+            "https://i.ibb.co/FLDJR7Cn/20250507-111306.jpg",
+            "https://i.ibb.co/j9YmBcNQ/20250507-111320.jpg"
+        ],
+        "bracelet": "Crna 18mm"
+    },
+    "Tourist": {
+        "name": "Tourist",
+        "color": "Pozlata",
+        "case_size": "36mm",
+        "movement": "Mehanicki ETA 1100",
+        "country": "Swiss",
+        "description": "Pozlata u losijem stanju",
+        "price": "5000din",
+        "images": [
+            "https://i.ibb.co/0yDfx5Rt/20250501-150645.jpg",
+            "https://i.ibb.co/992Kk1L7/20250501-150648.jpg",
+            "https://i.ibb.co/rRsN0RTg/20250501-150651.jpg",
+            "https://i.ibb.co/rKW4Gh9G/20250501-150721.jpg"
+        ],
+        "bracelet": "Pozlata Fixoflex"
+    },
+    "Timex22128": {
+        "name": "Timex 22128",
+        "color": "Celik",
+        "case_size": "30mm",
+        "movement": "Timex M24",
+        "country": "Taiwan",
+        "description": "",
+        "price": "2500din",
+        "images": [
+            "https://i.ibb.co/Q3nQkn3v/20250501-152549.jpg",
+            "https://i.ibb.co/fYCLPty7/20250501-152551.jpg",
+            "https://i.ibb.co/sp1XrSdW/20250501-152554.jpg",
+            "https://i.ibb.co/j98cCMfv/20250501-152556.jpg",
+            "https://i.ibb.co/zThBrWgP/17461063606682248494068212918600.jpg"
+        ],
+        "bracelet": "Braon print 16mm"
+    },
+    "Ancre": {
+        "name": "Ancre",
+        "color": "Celik",
+        "case_size": "34mm",
+        "movement": "Mehanicki",
+        "country": "Francuska",
+        "description": "",
+        "price": "3600din",
+        "images": [
+            "https://i.ibb.co/dTHfbcx/20250501-152505.jpg",
+            "https://i.ibb.co/7L8sc9v/20250501-152507.jpg",
+            "https://i.ibb.co/WNs5Jfyq/20250501-152510.jpg",
+            "https://i.ibb.co/yB6Y1gCZ/20250501-152514.jpg",
+            "https://i.ibb.co/DHgF1j86/17461063700932349226241765080978.jpg"
+        ],
+        "bracelet": "Celik 18mm"
+    },
+    "JungHansMegaSilver": {
+        "name": "Junghans Mega",
+        "color": "Crna",
+        "case_size": "22mm",
+        "movement": "Quartz ETA",
+        "country": "Nemacka",
+        "description": "Keramicko kuciste, u jako dobrom stanju, po meni jedan od lepsih zenskih satova",
+        "price": "4800din",
+        "images": [
+            "https://i.ibb.co/R4vN09Yv/20250501-211402.jpg",
+            "https://i.ibb.co/PvvNFSfR/20250501-211406.jpg",
+            "https://i.ibb.co/mrSSxzFN/20250501-211424.jpg",
+            "https://i.ibb.co/ynJZRXcN/20250501-211545.jpg"
+        ],
+        "bracelet": "Kozna Crna 14mm"
+    },
+    "SwatchGK725": {
+        "name": "Swatch GK725 Sanddune",
+        "color": "Braon",
+        "case_size": "34mm",
+        "movement": "Quartz ETA",
+        "country": "Swiss",
+        "description": "Stanje kao na slikama",
+        "price": "2500din",
+        "images": [
+            "https://i.ibb.co/Vc5R7Xmr/20250503-182236.jpg",
+            "https://i.ibb.co/4ncn8vJW/20250503-182230.jpg",
+            "https://i.ibb.co/DPrSh9fL/20250503-182231.jpg",
+            "https://i.ibb.co/PZ5ZnGfn/20250503-182242.jpg",
+            "https://i.ibb.co/GfwSRV0X/20250503-182327.jpg"
+        ],
+        "bracelet": "Celik 18mm"
+    },
+    "FlikFlak": {
+        "name": "Flik Flak",
+        "color": "Razno",
+        "case_size": "18mm",
+        "movement": "Quartz ETA",
+        "country": "Swiss",
+        "description": "Stanje kao na slikama, cena po komadu",
+        "price": "1200din",
+        "images": [
+            "https://i.ibb.co/GQFCYMnZ/20250501-211017.jpg"
+        ],
+        "bracelet": "Celik 18mm"
+    }
+}
