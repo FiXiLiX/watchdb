@@ -4,90 +4,75 @@
 <meta charset="UTF-8">
 <title>Watch JSON Editor</title>
 <style>
-body { background: #121212; color: #eee; font-family: Arial, sans-serif; margin: 20px; }
-h2 { color: #fff; margin-bottom: 10px; }
-label { font-weight: bold; display: block; margin-bottom: 5px; }
-input, textarea {
-    background: #1e1e1e; color: #fff; border: 1px solid #444;
-    border-radius: 6px; padding: 10px; margin-bottom: 12px; width: 100%;
-    box-sizing: border-box;
-}
-textarea { height: 70px; font-family: monospace; }
-.btn {
-    background: #333; color: #fff; border: none;
-    padding: 8px 16px; margin: 5px; border-radius: 6px;
-    cursor: pointer; transition: 0.2s;
-}
-.btn:hover { background: #555; }
-.row { display: flex; gap: 10px; }
-.row .field { flex: 1; }
-#formArea { margin-top: 20px; }
-#notification {
-    margin-top: 10px; padding: 10px 15px; border-radius: 6px; display: none;
-}
-#notification.success { background-color: #28a745; color: #fff; }
-#notification.error { background-color: #dc3545; color: #fff; }
-.image-preview { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
-.image-preview img {
-    width: 180px; height: 180px; object-fit: cover; cursor: pointer;
-    border: 2px solid #444; border-radius: 6px; transition: 0.2s;
-}
-.image-preview img:hover { transform: scale(1.05); border-color: #888; }
-#imagePopup {
-    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-    background: rgba(0,0,0,0.85); justify-content:center; align-items:center;
-    z-index: 1000; flex-direction: column;
-}
+body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#eee; display:flex; height:100vh; }
+#sidebar { width:320px; background:#1e1e1e; padding:10px; box-sizing:border-box; overflow-y:auto; border-right:1px solid #444; }
+#sidebar h3 { margin-top:0; }
+#searchBox { width:100%; padding:8px 10px; margin-bottom:10px; border-radius:6px; border:1px solid #444; background:#121212; color:#fff; }
+.watch-item { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:6px; cursor:pointer; margin-bottom:5px; background:#1e1e1e; }
+.watch-item img { width:40px; height:40px; object-fit:cover; border-radius:4px; border:1px solid #444; }
+.watch-item.active { background:#555; }
+#main { flex:1; padding:20px; overflow-y:auto; position:relative; }
+label { font-weight:bold; display:block; margin-bottom:5px; }
+input, textarea { width:100%; padding:10px; margin-bottom:12px; border-radius:6px; border:1px solid #444; background:#1e1e1e; color:#fff; box-sizing:border-box; }
+textarea { height:70px; font-family: monospace; }
+.btn { background:#333; color:#fff; border:none; padding:8px 16px; margin:5px; border-radius:6px; cursor:pointer; transition:0.2s; }
+.btn:hover { background:#555; }
+.row { display:flex; gap:10px; }
+.row .field { flex:1; position:relative; }
+#topButtons { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:15px; }
+#notification { margin-top:10px; padding:10px 15px; border-radius:6px; display:none; }
+#notification.success { background-color:#28a745; color:#fff; }
+#notification.error { background-color:#dc3545; color:#fff; }
+.image-preview { display:flex; flex-wrap:wrap; gap:15px; margin-top:10px; }
+.image-preview img { width:180px; height:180px; object-fit:cover; cursor:pointer; border:2px solid #444; border-radius:6px; transition:0.2s; }
+.image-preview img:hover { transform:scale(1.05); border-color:#888; }
+.image-preview .dragging { opacity:0.5; }
+#imagePopup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:1000; flex-direction:column; }
 #imagePopup img { max-width:80%; max-height:80%; border-radius:6px; margin-bottom:10px; }
 #popupClose { color:#fff; cursor:pointer; font-size:24px; margin-bottom:10px; }
-#topButtons { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:15px; }
-#watchSuggestions { position:absolute; z-index:100; background:#1e1e1e; border:1px solid #444; width:100%; max-height:200px; overflow-y:auto; border-radius:6px; }
-#watchSuggestions div { padding:5px 10px; cursor:pointer; }
-#watchSuggestions div:hover { background:#333; }
+#countrySuggestions { position:absolute; background:#1e1e1e; border:1px solid #444; border-radius:6px; display:none; max-height:150px; overflow-y:auto; z-index:1000; }
+.dragging { opacity:0.5; }
 </style>
 </head>
 <body>
 
-<h2>Watch JSON Editor</h2>
-
-<!-- Top buttons -->
-<div id="topButtons">
-  <button class="btn" id="openFileBtn">📂 Open JSON File</button>
-  <button class="btn" id="setDefaultBtn" style="display:none;">⭐ Set as Default</button>
-  <button class="btn" id="addWatchBtn" style="display:none;">➕ Add Watch</button>
-  <button class="btn" id="saveWatchBtn">💾 Save Watch</button>
-  <button class="btn" id="deleteWatchBtn" style="background:#922;">🗑 Delete Watch</button>
+<div id="sidebar">
+  <h3>Watches</h3>
+  <input type="text" id="searchBox" placeholder="Search watches...">
+  <div id="watchList"></div>
 </div>
 
-<div id="notification"></div>
-
-<label for="watchSearch">Select Watch:</label>
-<input id="watchSearch" type="text" placeholder="Type to search...">
-<div id="watchSuggestions"></div>
-
-<div id="formArea" style="display:none;">
-  <div class="row">
-    <div class="field"><label>Name:</label><input id="name" type="text"></div>
-    <div class="field"><label>Color:</label><input id="color" type="text"></div>
-    <div class="field"><label>Case Size:</label><input id="case_size" type="text"></div>
+<div id="main">
+  <div id="topButtons">
+    <button class="btn" id="openFileBtn">📂 Open JSON File</button>
+    <button class="btn" id="setDefaultBtn" style="display:none;">⭐ Set Default</button>
+    <button class="btn" id="addWatchBtn" style="display:none;">➕ Add Watch</button>
+    <button class="btn" id="saveWatchBtn">💾 Save Watch</button>
+    <button class="btn" id="deleteWatchBtn" style="background:#922;">🗑 Delete Watch</button>
   </div>
-  <div class="row">
-    <div class="field"><label>Movement:</label><input id="movement" type="text"></div>
-    <div class="field"><label>Country:</label><input id="country" type="text"></div>
-    <div class="field"><label>Price:</label><input id="price" type="text"></div>
+  <div id="notification"></div>
+
+  <div id="formArea" style="display:none;">
+    <div class="row">
+      <div class="field"><label>Name:</label><input id="name" type="text"></div>
+      <div class="field"><label>Color:</label><input id="color" type="text"></div>
+      <div class="field"><label>Case Size:</label><input id="case_size" type="text"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Movement:</label><input id="movement" type="text"></div>
+      <div class="field"><label>Country:</label><input id="country" type="text"><div id="countrySuggestions"></div></div>
+      <div class="field"><label>Price:</label><input id="price" type="text"></div>
+    </div>
+    <label>Description:</label>
+    <textarea id="description"></textarea>
+    <label>Bracelet:</label>
+    <input id="bracelet" type="text">
+    <label>Images (comma separated URLs):</label>
+    <textarea id="images" type="text"></textarea>
+    <div class="image-preview" id="imagePreview"></div>
   </div>
-  <label>Description:</label>
-  <textarea id="description"></textarea>
-
-  <label>Bracelet:</label>
-  <input id="bracelet" type="text">
-
-  <label>Images (comma separated URLs):</label>
-  <textarea id="images"></textarea>
-  <div class="image-preview" id="imagePreview"></div>
 </div>
 
-<!-- Image popup -->
 <div id="imagePopup">
   <div id="popupClose">✖ Close</div>
   <img id="popupImg" src="">
@@ -95,189 +80,260 @@ textarea { height: 70px; font-family: monospace; }
 
 <script>
 let watches = {};
+let watchOrder = [];
 let currentKey = null;
 let fileHandle = null;
 let popupIndex = 0;
 const fields = ["name","color","case_size","movement","country","description","price","bracelet","images"];
 
-const watchSearch = document.getElementById("watchSearch");
-const suggestionsDiv = document.getElementById("watchSuggestions");
+const watchListDiv = document.getElementById("watchList");
+const searchBox = document.getElementById("searchBox");
 const formArea = document.getElementById("formArea");
 const notification = document.getElementById("notification");
 const popup = document.getElementById("imagePopup");
 const popupImg = document.getElementById("popupImg");
 
+const countryInput = document.getElementById("country");
+const countrySuggestions = document.getElementById("countrySuggestions");
+
+// Notifications
 function showNotification(msg, type="success") {
   notification.textContent = msg;
-  notification.className = type === "success" ? "success" : "error";
-  notification.style.display = "block";
-  setTimeout(() => { notification.style.display = "none"; }, 3000);
+  notification.className = type==="success"?"success":"error";
+  notification.style.display="block";
+  setTimeout(()=>{notification.style.display="none";},3000);
 }
 
-function populateDropdown() {
-  // Not needed for autocomplete, used to refresh watchSearch suggestions
-  watchSearch.value = "";
-  suggestionsDiv.innerHTML = "";
-}
+// Sidebar
+function renderWatchList(filter="") {
+  watchListDiv.innerHTML="";
+  watchOrder.filter(key=>watches[key].name.toLowerCase().includes(filter.toLowerCase())).forEach(key=>{
+    const watch=watches[key];
+    const div=document.createElement("div");
+    div.className="watch-item"+(key===currentKey?" active":"");
+    div.draggable=true;
+    const img=document.createElement("img");
+    img.src=(watch.images && watch.images[0])||"";
+    div.appendChild(img);
+    const span=document.createElement("span");
+    span.textContent=watch.name;
+    div.appendChild(span);
+    div.onclick=()=>loadWatch(key);
 
-function loadWatch(key) {
-  currentKey = key;
-  const watch = watches[key];
-  if (!watch) return;
+    // Drag & drop for sidebar
+    div.addEventListener("dragstart", e=>{ div.classList.add("dragging"); e.dataTransfer.setData("text/plain", key); });
+    div.addEventListener("dragend", ()=>div.classList.remove("dragging"));
+    div.addEventListener("dragover", e=>e.preventDefault());
+    div.addEventListener("drop", e=>{
+      e.preventDefault();
+      const draggedKey=e.dataTransfer.getData("text/plain");
+      if(draggedKey===key) return;
+      const fromIdx=watchOrder.indexOf(draggedKey);
+      const toIdx=watchOrder.indexOf(key);
+      watchOrder.splice(fromIdx,1);
+      watchOrder.splice(toIdx,0,draggedKey);
+      renderWatchList(searchBox.value);
+    });
 
-  fields.forEach(f => {
-    if(f==="images") document.getElementById(f).value = (watch[f] || []).join(", ");
-    else document.getElementById(f).value = watch[f] || "";
+    watchListDiv.appendChild(div);
   });
-  renderImagePreview(watch.images || []);
 }
 
-function renderImagePreview(urls) {
-  const preview = document.getElementById("imagePreview");
-  preview.innerHTML = "";
-  urls.forEach((url,i) => {
-    const img = document.createElement("img");
-    img.src = url;
-    img.onclick = () => openPopup(i);
+function loadWatch(key){
+  currentKey=key;
+  const watch=watches[key];
+  if(!watch) return;
+  fields.forEach(f=>{
+    if(f==="images") document.getElementById(f).value=(watch[f]||[]).join(", ");
+    else document.getElementById(f).value=watch[f]||"";
+  });
+  renderImagePreview(watch.images||[]);
+  formArea.style.display="block";
+  renderWatchList(searchBox.value);
+}
+
+// Image preview with drag-and-drop reordering
+function renderImagePreview(urls){
+  const preview=document.getElementById("imagePreview");
+  preview.innerHTML="";
+  urls.forEach((url,i)=>{
+    const img=document.createElement("img");
+    img.src=url;
+    img.draggable=true;
+    img.dataset.index=i;
+
+    img.onclick=()=>openPopup(i);
+
+    img.addEventListener("dragstart", e=>{
+      e.dataTransfer.setData("text/plain", i);
+      img.classList.add("dragging");
+    });
+    img.addEventListener("dragend", e=>{
+      img.classList.remove("dragging");
+    });
+    img.addEventListener("dragover", e=>e.preventDefault());
+    img.addEventListener("drop", async e=>{
+      e.preventDefault();
+      const draggedIndex = parseInt(e.dataTransfer.getData("text/plain"));
+      const targetIndex = parseInt(img.dataset.index);
+      if(draggedIndex===targetIndex) return;
+      const arr = watches[currentKey].images;
+      const [moved] = arr.splice(draggedIndex,1);
+      arr.splice(targetIndex,0,moved);
+      await saveJsonFile();
+      renderImagePreview(arr);
+    });
+
     preview.appendChild(img);
   });
 }
 
-function openPopup(index) {
-  const urls = watches[currentKey].images || [];
-  if (!urls.length) return;
-  popupIndex = index;
-  popupImg.src = urls[popupIndex];
-  popup.style.display = "flex";
+// Image popup
+function openPopup(index){
+  const urls=watches[currentKey].images||[];
+  if(!urls.length) return;
+  popupIndex=index;
+  popupImg.src=urls[popupIndex];
+  popup.style.display="flex";
 }
-
-document.addEventListener("keydown", e => {
-  if (popup.style.display !== "flex") return;
-  const urls = watches[currentKey].images || [];
-  if (e.key === "ArrowRight") {
-    popupIndex = (popupIndex + 1) % urls.length;
-    popupImg.src = urls[popupIndex];
-  } else if (e.key === "ArrowLeft") {
-    popupIndex = (popupIndex - 1 + urls.length) % urls.length;
-    popupImg.src = urls[popupIndex];
-  } else if (e.key === "Escape") {
-    popup.style.display = "none";
-  }
+document.getElementById("popupClose").onclick=()=>popup.style.display="none";
+document.addEventListener("keydown", e=>{
+  if(popup.style.display!=="flex") return;
+  const urls=watches[currentKey].images||[];
+  if(e.key==="ArrowRight"){popupIndex=(popupIndex+1)%urls.length; popupImg.src=urls[popupIndex];}
+  else if(e.key==="ArrowLeft"){popupIndex=(popupIndex-1+urls.length)%urls.length; popupImg.src=urls[popupIndex];}
+  else if(e.key==="Escape") popup.style.display="none";
 });
 
-document.getElementById("popupClose").onclick = () => popup.style.display = "none";
-
-async function openJsonFile() {
-  [fileHandle] = await window.showOpenFilePicker({
-    types: [{ description: "JSON Files", accept: { "application/json": [".json"] } }]
-  });
+// JSON file
+async function openJsonFile(){
+  [fileHandle]=await window.showOpenFilePicker({types:[{description:"JSON Files",accept:{"application/json":[".json"]}}]});
   await loadJsonFile();
-  document.getElementById("setDefaultBtn").style.display = "inline-block";
+  document.getElementById("setDefaultBtn").style.display="inline-block";
 }
 
-async function loadJsonFile() {
-  const file = await fileHandle.getFile();
-  const text = await file.text();
-  watches = JSON.parse(text);
-  populateDropdown();
-  formArea.style.display = "block";
-  document.getElementById("addWatchBtn").style.display = "inline-block";
-  loadWatch(Object.keys(watches)[0]);
+async function loadJsonFile(){
+  const file=await fileHandle.getFile();
+  const text=await file.text();
+  watches=JSON.parse(text);
+  watchOrder=Object.keys(watches);
+  formArea.style.display="block";
+  document.getElementById("addWatchBtn").style.display="inline-block";
+  loadWatch(watchOrder[0]);
 }
 
-async function saveJsonFile() {
-  if (!fileHandle) return;
-  const writable = await fileHandle.createWritable();
+async function saveJsonFile(){
+  if(!fileHandle) return;
+  const orderedWatches={};
+  watchOrder.forEach(key=>{orderedWatches[key]=watches[key];});
+  watches=orderedWatches;
+  const writable=await fileHandle.createWritable();
   await writable.write(JSON.stringify(watches,null,4));
   await writable.close();
 }
 
-// Save watch
-document.getElementById("saveWatchBtn").addEventListener("click", async () => {
-  if (!fileHandle) return showNotification("No file loaded!", "error");
-  let key = currentKey;
-  if (!key) key = prompt("Enter a unique key for this watch:");
-  if (!key) return showNotification("Watch key is required!", "error");
-
-  const updated = {};
-  fields.forEach(f => {
-    if(f==="images") updated[f] = document.getElementById(f).value.split(",").map(s=>s.trim()).filter(Boolean);
-    else updated[f] = document.getElementById(f).value;
+// Save
+document.getElementById("saveWatchBtn").addEventListener("click", async ()=>{
+  if(!fileHandle) return showNotification("No file loaded!","error");
+  let key=currentKey;
+  if(!key) key=prompt("Enter unique key:");
+  if(!key) return showNotification("Watch key required!","error");
+  const updated={};
+  fields.forEach(f=>{
+    if(f==="images") updated[f]=document.getElementById(f).value.split(",").map(s=>s.trim()).filter(Boolean);
+    else updated[f]=document.getElementById(f).value;
   });
-  watches[key] = updated;
-  populateDropdown();
-  currentKey = key;
+  if(!watchOrder.includes(key)) watchOrder.push(key);
+  watches[key]=updated;
+  currentKey=key;
   loadWatch(key);
   await saveJsonFile();
-  showNotification("Watch saved and file updated!");
+  showNotification("Watch saved!");
 });
 
-// Add new watch
-document.getElementById("addWatchBtn").addEventListener("click", () => {
-  currentKey = null;
-  watchSearch.value = "";
-  suggestionsDiv.innerHTML = "";
-  fields.forEach(f => document.getElementById(f).value = "");
-  document.getElementById("imagePreview").innerHTML = "";
-  showNotification("Fill in the form and click Save Watch to add.");
+// Add
+document.getElementById("addWatchBtn").addEventListener("click", ()=>{
+  currentKey=null;
+  fields.forEach(f=>document.getElementById(f).value="");
+  document.getElementById("imagePreview").innerHTML="";
+  formArea.style.display="block";
+  renderWatchList();
+  showNotification("Fill form and click Save Watch.");
 });
 
-// Delete watch
-document.getElementById("deleteWatchBtn").addEventListener("click", async () => {
-  if (!currentKey) return showNotification("No watch selected to delete.", "error");
-  if (confirm(`Are you sure you want to delete '${currentKey}'?`)) {
+// Delete
+document.getElementById("deleteWatchBtn").addEventListener("click", async ()=>{
+  if(!currentKey) return showNotification("No watch selected.","error");
+  if(confirm(`Delete '${watches[currentKey].name}'?`)){
     delete watches[currentKey];
-    populateDropdown();
-    if (Object.keys(watches).length) loadWatch(Object.keys(watches)[0]);
-    else formArea.style.display = "none";
-    currentKey = Object.keys(watches)[0] || null;
+    const idx=watchOrder.indexOf(currentKey);
+    if(idx>=0) watchOrder.splice(idx,1);
+    currentKey=watchOrder[0]||null;
+    if(currentKey) loadWatch(currentKey);
+    else formArea.style.display="none";
     await saveJsonFile();
-    showNotification("Watch deleted and file updated!");
+    showNotification("Watch deleted!");
   }
 });
 
-// Autocomplete search
-watchSearch.addEventListener("input", () => {
-  const query = watchSearch.value.toLowerCase();
-  const matches = Object.keys(watches).filter(k=>k.toLowerCase().includes(query));
-  suggestionsDiv.innerHTML = "";
-  matches.forEach(match => {
-    const div = document.createElement("div");
-    div.textContent = match;
-    div.onclick = () => { watchSearch.value = match; loadWatch(match); suggestionsDiv.innerHTML=""; };
-    suggestionsDiv.appendChild(div);
+// Search
+searchBox.addEventListener("input", ()=> renderWatchList(searchBox.value));
+
+// Country autocomplete
+function getAllCountries(){
+  const countries=new Set();
+  Object.values(watches).forEach(w=>{if(w.country)countries.add(w.country);});
+  return Array.from(countries);
+}
+countryInput.addEventListener("input", ()=>{
+  const query=countryInput.value.toLowerCase();
+  const matches=getAllCountries().filter(c=>c.toLowerCase().includes(query));
+  countrySuggestions.innerHTML="";
+  if(matches.length===0){ countrySuggestions.style.display="none"; return; }
+  matches.forEach(c=>{
+    const div=document.createElement("div");
+    div.textContent=c;
+    div.style.padding="5px 10px"; div.style.cursor="pointer";
+    div.onmouseover=()=>div.style.background="#333";
+    div.onmouseout=()=>div.style.background="#1e1e1e";
+    div.onclick=()=>{ countryInput.value=c; countrySuggestions.style.display="none"; };
+    countrySuggestions.appendChild(div);
   });
+  // Position under input
+  countrySuggestions.style.top = countryInput.offsetTop + countryInput.offsetHeight + "px";
+  countrySuggestions.style.left = countryInput.offsetLeft + "px";
+  countrySuggestions.style.width = countryInput.offsetWidth + "px";
+  countrySuggestions.style.display = "block";
+});
+document.addEventListener("click", e=>{
+  if(!countryInput.contains(e.target) && !countrySuggestions.contains(e.target)) countrySuggestions.style.display="none";
 });
 
-document.addEventListener("click", e => {
-  if (!watchSearch.contains(e.target) && !suggestionsDiv.contains(e.target)) suggestionsDiv.innerHTML="";
-});
-
-// Set default file
-document.getElementById("setDefaultBtn").addEventListener("click", async () => {
-  if (!fileHandle) return;
-  const dbRequest = indexedDB.open("watch-editor",1);
-  dbRequest.onupgradeneeded = ()=> dbRequest.result.createObjectStore("handles");
-  dbRequest.onsuccess = ()=> {
-    const db = dbRequest.result;
-    const tx = db.transaction("handles","readwrite");
+// Default file
+document.getElementById("setDefaultBtn").addEventListener("click", async ()=>{
+  if(!fileHandle) return;
+  const dbRequest=indexedDB.open("watch-editor",1);
+  dbRequest.onupgradeneeded=()=>dbRequest.result.createObjectStore("handles");
+  dbRequest.onsuccess=()=>{
+    const db=dbRequest.result;
+    const tx=db.transaction("handles","readwrite");
     tx.objectStore("handles").put(fileHandle,"defaultFile");
-    tx.oncomplete = ()=> showNotification("Default file set! Will auto-load next session.");
+    tx.oncomplete=()=>showNotification("Default file set!");
   };
 });
 
-// Auto-load default file
-window.addEventListener("DOMContentLoaded", async () => {
-  const dbRequest = indexedDB.open("watch-editor",1);
-  dbRequest.onupgradeneeded = ()=> dbRequest.result.createObjectStore("handles");
-  dbRequest.onsuccess = async ()=> {
-    const db = dbRequest.result;
-    const tx = db.transaction("handles","readonly");
-    const store = tx.objectStore("handles");
-    const getReq = store.get("defaultFile");
-    getReq.onsuccess = async ()=> {
-      const handle = getReq.result;
-      if(handle){ fileHandle = handle; try { await loadJsonFile(); document.getElementById("setDefaultBtn").style.display = "inline-block"; } catch(e){console.log(e);} }
+// Auto-load default
+window.addEventListener("DOMContentLoaded", async ()=>{
+  const dbRequest=indexedDB.open("watch-editor",1);
+  dbRequest.onupgradeneeded=()=>dbRequest.result.createObjectStore("handles");
+  dbRequest.onsuccess=async ()=>{
+    const db=dbRequest.result;
+    const tx=db.transaction("handles","readonly");
+    const store=tx.objectStore("handles");
+    const getReq=store.get("defaultFile");
+    getReq.onsuccess=async ()=>{
+      const handle=getReq.result;
+      if(handle){ fileHandle=handle; try{await loadJsonFile(); document.getElementById("setDefaultBtn").style.display="inline-block";} catch(e){console.log(e);} }
     };
   };
 });
