@@ -37,8 +37,10 @@ header img { height:110px; }
 footer { background:#1e1e1e; padding:15px; text-align:center; border-top:1px solid #444; }
 footer a { color:#fff; margin:0 10px; text-decoration:none; }
 
-/* Responsive fix */
+/* ✅ Responsive fixes */
 @media (max-width:768px){
+  .watch-card { width:100%; } /* 1 per row on mobile */
+  .watch-card img { height:200px; } /* smaller images for less scroll */
   .modal-content { flex-direction:column; max-height:85%; }
   .modal-left, .modal-right { flex:none; width:100%; }
   .modal-left img { max-height:300px; }
@@ -48,7 +50,7 @@ footer a { color:#fff; margin:0 10px; text-decoration:none; }
 <body>
 
 <header>
-  <img src="/logo2.png" alt="Logo">
+  <img src="/logo.png" alt="Logo">
 </header>
 
 <div class="container" id="watchContainer"></div>
