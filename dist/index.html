@@ -4,46 +4,192 @@
 <meta charset="UTF-8">
 <title>Watch Shop</title>
 <style>
-body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#eee; display:flex; flex-direction:column; min-height:100vh; }
-header { padding:20px; text-align:center; background:#1e1e1e; border-bottom:1px solid #444; display:flex; justify-content:center; align-items:center; }
+body { 
+  margin:0; 
+  font-family: Arial, sans-serif; 
+  background:#121212; 
+  color:#eee; 
+  display:flex; 
+  flex-direction:column; 
+  min-height:100vh; 
+  font-size:16px;
+  line-height:1.6;
+}
+
+header { 
+  padding:10px; 
+  text-align:center; 
+  background:#1e1e1e; 
+  border-bottom:1px solid #444; 
+}
 header img { height:110px; }
-.container { display:flex; flex-wrap:wrap; gap:20px; padding:20px; justify-content:center; flex:1; }
-.watch-card { background:#1e1e1e; padding:15px; border-radius:8px; width:300px; box-sizing:border-box; display:flex; flex-direction:column; gap:10px; transition:0.2s; cursor:pointer; }
-.watch-card:hover { transform:scale(1.02); border:1px solid #555; }
-.watch-card img { width:100%; height:250px; object-fit:cover; border-radius:6px; }
+
+.container { 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:20px; 
+  padding:20px; 
+  justify-content:center; 
+}
+
+.watch-card { 
+  background:#1e1e1e; 
+  padding:15px; 
+  border-radius:8px; 
+  width:300px; 
+  box-sizing:border-box; 
+  display:flex; 
+  flex-direction:column; 
+  gap:10px; 
+  transition:0.2s; 
+  cursor:pointer; 
+}
+.watch-card:hover { 
+  transform:scale(1.02); 
+  border:1px solid #555; 
+}
+.watch-card img { 
+  width:100%; 
+  height:auto; 
+  max-height:300px; 
+  object-fit:contain; 
+  border-radius:6px; 
+}
 .watch-card h2 { margin:0; font-size:20px; }
 .price { font-weight:bold; font-size:16px; margin-top:5px; }
 
-/* Modal */
-#modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000; }
-.modal-content { display:flex; gap:20px; max-width:1000px; width:90%; max-height:90%; background:#1e1e1e; padding:20px; border-radius:10px; overflow:auto; }
-.modal-left { flex:1; display:flex; flex-direction:column; align-items:center; gap:10px; }
-.modal-left img { width:100%; max-height:500px; object-fit:cover; border-radius:6px; }
-.image-thumbnails { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:5px; }
-.image-thumbnails img { width:60px; height:60px; object-fit:cover; border-radius:4px; cursor:pointer; border:2px solid #444; transition:0.2s; }
-.image-thumbnails img.active { border-color:#fff; }
-.modal-right { flex:1; display:flex; flex-direction:column; gap:10px; min-width:250px; }
+#modal { 
+  display:none; 
+  position:fixed; 
+  top:0; 
+  left:0; 
+  width:100%; 
+  height:100%; 
+  background:rgba(0,0,0,0.9); 
+  justify-content:center; 
+  align-items:center; 
+  z-index:1000; 
+}
+.modal-content { 
+  display:flex; 
+  gap:20px; 
+  max-width:1000px; 
+  width:90%; 
+  max-height:90%; 
+  background:#1e1e1e; 
+  padding:20px; 
+  border-radius:10px; 
+  overflow:auto; 
+  position:relative;
+}
+.modal-left { 
+  flex:1; 
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  gap:10px; 
+}
+.modal-left img { 
+  width:100%; 
+  max-height:85vh; 
+  object-fit:contain; 
+  border-radius:6px; 
+}
+.modal-right { 
+  flex:1; 
+  display:flex; 
+  flex-direction:column; 
+  gap:10px; 
+}
 .modal-right h2 { margin:0; }
 .modal-right p { margin:2px 0; }
-#modalClose { position:absolute; top:20px; right:30px; font-size:28px; cursor:pointer; color:#fff; }
-.nav-btn { font-size:28px; cursor:pointer; color:#fff; user-select:none; margin:0 10px; }
 
-/* Order button */
-.order-btn { display:inline-flex; align-items:center; gap:8px; background:#E1306C; color:#fff; padding:10px 16px; border:none; border-radius:6px; cursor:pointer; font-size:16px; text-decoration:none; transition:0.2s; }
-.order-btn:hover { background:#c62a5d; }
-.order-btn img { width:20px; height:20px; }
+#modalClose { 
+  position:absolute; 
+  top:20px; 
+  right:30px; 
+  font-size:28px; 
+  cursor:pointer; 
+  color:#fff; 
+}
 
-/* Footer */
-footer { background:#1e1e1e; padding:15px; text-align:center; border-top:1px solid #444; }
-footer a { color:#fff; margin:0 10px; text-decoration:none; }
+.nav-btn { 
+  font-size:28px; 
+  cursor:pointer; 
+  color:#fff; 
+  user-select:none; 
+  margin:0 10px; 
+}
+.image-nav { 
+  display:flex; 
+  justify-content:center; 
+  gap:10px; 
+  align-items:center; 
+  margin-top:5px; 
+}
+.image-thumbnails { 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:10px; 
+  justify-content:center; 
+}
+.image-thumbnails img { 
+  width:70px; 
+  height:70px; 
+  object-fit:contain; 
+  border-radius:4px; 
+  cursor:pointer; 
+  border:2px solid #444; 
+  transition:0.2s; 
+}
+.image-thumbnails img.active { border:2px solid #fff; }
 
-/* ✅ Responsive fixes */
-@media (max-width:1200px){
-  .watch-card { width:100%; } /* 1 per row on mobile */
-  .watch-card img { height:200px; } /* smaller images for less scroll */
+footer { 
+  margin-top:auto; 
+  background:#1e1e1e; 
+  text-align:center; 
+  padding:20px 10px; 
+  border-top:1px solid #444; 
+}
+.footer-content {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.footer-brand {
+  font-size:14px;
+  color:#aaa;
+}
+.footer-links {
+  display:flex;
+  gap:15px;
+}
+.footer-links a { 
+  color:#eee; 
+  text-decoration:none; 
+  font-size:16px; 
+  transition:color 0.2s;
+}
+.footer-links a:hover { color:#E1306C; }
+.footer-instagram {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:#E1306C;
+  padding:8px 14px;
+  border-radius:6px;
+  color:#fff !important;
+  font-weight:bold;
+}
+.footer-instagram:hover { background:#c72a5a; }
+@media (max-width:768px){
+  body { font-size:18px; }
+  .watch-card { width:100%; }
+  .watch-card img { max-height:220px; }
   .modal-content { flex-direction:column; max-height:85%; }
   .modal-left, .modal-right { flex:none; width:100%; }
-  .modal-left img { max-height:300px; }
+  .modal-left img { max-height:70vh; }
 }
 </style>
 </head>
@@ -60,18 +206,25 @@ footer a { color:#fff; margin:0 10px; text-decoration:none; }
   <div class="modal-content">
     <div class="modal-left">
       <img id="modalImg" src="">
-      <div class="image-thumbnails" id="thumbnailContainer"></div>
       <div class="image-nav">
         <span class="nav-btn" id="prevImg">◀</span>
         <span class="nav-btn" id="nextImg">▶</span>
       </div>
+      <div class="image-thumbnails" id="thumbnails"></div>
     </div>
     <div class="modal-right" id="modalDetails"></div>
   </div>
 </div>
 
 <footer>
-  <a href="https://www.instagram.com/kovacevic.satovi/" target="_blank">Instagram</a>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="#about">About</a>
+      <a href="https://www.instagram.com/kovacevic.satovi/" target="_blank" class="footer-instagram">📷 Instagram</a>
+    </div>
+    <div class="footer-brand">© 2025 Kovačević Satovi. All rights reserved.</div>
+  </div>
 </footer>
 
 <script>
@@ -79,7 +232,6 @@ let watches = [];
 let currentWatch = null;
 let popupIndex = 0;
 
-// Load JSON
 fetch('/watches.json')
   .then(res => res.json())
   .then(json => {
@@ -101,6 +253,7 @@ function renderWatches(){
 
     const title = document.createElement('h2'); title.textContent = watch.name;
     const price = document.createElement('div'); price.className='price'; price.textContent = watch.price;
+
     const color = document.createElement('p'); color.innerHTML = `<b>Color:</b> ${watch.color}`;
     const caseSize = document.createElement('p'); caseSize.innerHTML = `<b>Case Size:</b> ${watch.case_size}`;
 
@@ -109,7 +262,6 @@ function renderWatches(){
   });
 }
 
-// Modal
 function openModal(idx){
   currentWatch = watches[idx];
   popupIndex = 0;
@@ -121,17 +273,6 @@ function updateModal(){
   const img = document.getElementById('modalImg');
   img.src = currentWatch.images && currentWatch.images[popupIndex] || '';
 
-  // thumbnails
-  const thumbContainer = document.getElementById('thumbnailContainer');
-  thumbContainer.innerHTML = '';
-  currentWatch.images.forEach((url,i)=>{
-    const thumb = document.createElement('img');
-    thumb.src = url;
-    if(i===popupIndex) thumb.classList.add('active');
-    thumb.onclick = ()=>{ popupIndex=i; updateModal(); };
-    thumbContainer.appendChild(thumb);
-  });
-
   const details = document.getElementById('modalDetails');
   details.innerHTML = `
     <h2>${currentWatch.name}</h2>
@@ -142,13 +283,22 @@ function updateModal(){
     <p><b>Country:</b> ${currentWatch.country}</p>
     <p><b>Bracelet:</b> ${currentWatch.bracelet}</p>
     <p><b>Description:</b> ${currentWatch.description}</p>
-    <a href="https://www.instagram.com/kovacevic.satovi/" target="_blank" class="order-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="IG"> Order via Instagram
-    </a>
+    <a href="https://www.instagram.com/kovacevic.satovi/" target="_blank" style="margin-top:10px;display:inline-block;padding:10px 15px;background:#E1306C;color:#fff;border-radius:6px;text-decoration:none;">📷 Order via Instagram</a>
   `;
+
+  const thumbs = document.getElementById('thumbnails');
+  thumbs.innerHTML = '';
+  if(currentWatch.images){
+    currentWatch.images.forEach((src,i)=>{
+      const t=document.createElement('img');
+      t.src=src;
+      if(i===popupIndex) t.classList.add('active');
+      t.onclick=()=>{ popupIndex=i; updateModal(); };
+      thumbs.appendChild(t);
+    });
+  }
 }
 
-// Modal navigation
 document.getElementById('modalClose').onclick = ()=>document.getElementById('modal').style.display='none';
 document.getElementById('prevImg').onclick = ()=>{ if(!currentWatch.images) return; popupIndex=(popupIndex-1+currentWatch.images.length)%currentWatch.images.length; updateModal();}
 document.getElementById('nextImg').onclick = ()=>{ if(!currentWatch.images) return; popupIndex=(popupIndex+1)%currentWatch.images.length; updateModal(); }
@@ -158,6 +308,12 @@ document.addEventListener('keydown', e=>{
   if(e.key==='ArrowLeft') document.getElementById('prevImg').click();
   if(e.key==='ArrowRight') document.getElementById('nextImg').click();
   if(e.key==='Escape') document.getElementById('modalClose').click();
+});
+
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') {
+    document.getElementById('modal').style.display = 'none';
+  }
 });
 </script>
 
