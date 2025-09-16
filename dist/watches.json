@@ -1,0 +1,84 @@
+{
+    "GShockDW5900": {
+        "name": "G-Shock DW-5900",
+        "color": "Crna",
+        "case_size": "30mm",
+        "movement": "Quartz",
+        "country": "Japan",
+        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu, ne prelazi po sat/dva <br/> Preporuka za sat!",
+        "price": "7000din",
+        "bracelet": "Originalna Gumena",
+        "images": [
+            "https://i.ibb.co/8nWhXDVQ/20250913-192823301-removebg-preview.png"
+        ]
+    },
+    "SwatchWRAutomatic": {
+        "name": "Swatch WR Automatic",
+        "color": "Crna",
+        "case_size": "36mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "Sat je u odlicnom stanju, ispravan i tacan",
+        "price": "3000din",
+        "bracelet": "Crna Swatch Original",
+        "images": [
+            "https://i.ibb.co/Y7wT0hYP/1000023523-removebg-preview.png",
+            "https://i.ibb.co/65z26dr/20250914-180552755.jpg",
+            "https://i.ibb.co/jkyffHvB/20250914-180613987.jpg",
+            "https://i.ibb.co/rRRjGrLT/20250914-180618627.jpg",
+            "https://i.ibb.co/1JQWRpJL/20250914-180629581.jpg",
+            "https://i.ibb.co/vCdq7WPw/20250913-194349802.jpg"
+        ]
+    },
+    "SeikoH6015400": {
+        "name": "Seiko H601-5400",
+        "color": "Steel",
+        "case_size": "34mm",
+        "movement": "Quartz H601",
+        "country": "Japan",
+        "description": "Par ogrebotinica na staklu i metalu, neprimetno pri nosenju, sve funkcije rade, alarm, datum...",
+        "price": "5000din",
+        "bracelet": "Crna Kozna",
+        "images": [
+            "https://i.ibb.co/WNNKHkcd/20250916-220743144-Photoroom.png",
+            "https://i.ibb.co/1fbpXVhX/20250916-220610663.jpg",
+            "https://i.ibb.co/zV8zWRYq/20250916-220619763.jpg",
+            "https://i.ibb.co/6JFStNgT/20250428-210711.jpg",
+            "https://i.ibb.co/fVH8k3qy/20250428-210830.jpg"
+        ]
+    },
+    "Slava2412": {
+        "name": "Slava 2412",
+        "color": "Pozlata",
+        "case_size": "30mm",
+        "movement": "Mehanicki 2412",
+        "country": "SSSR",
+        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu <br/> Preporuka za sat!",
+        "price": "5000din",
+        "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm",
+        "images": [
+            "https://i.ibb.co/Nbb917s/20250916-214811596-Photoroom.png",
+            "https://i.ibb.co/Q3LrBVkX/20250916-214808594.jpg",
+            "https://i.ibb.co/Qj69mszY/20250916-214811596.jpg",
+            "https://i.ibb.co/RttpvVX/20250916-214814413.jpg",
+            "https://i.ibb.co/8n6WPczY/20250916-214820698.jpg",
+            "https://i.ibb.co/twTGyQ8G/20250916-214823741.jpg"
+        ]
+    },
+    "NivadaBabyWhale": {
+        "name": "Nivada Baby Whale",
+        "color": "Pozlata",
+        "case_size": "34mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "Pozlata u odlicnom stanju, vidljivi tragovi koriscenja. Potpuno ispravan i tacan",
+        "price": "4500din",
+        "bracelet": "Kozna, braon 18mm",
+        "images": [
+            "https://i.ibb.co/1t63HZZ5/20250916-214444972-Photoroom.png",
+            "https://i.ibb.co/GQzkzKTy/20250916-214437036.jpg",
+            "https://i.ibb.co/1fjkNPby/20250916-214444972.jpg",
+            "https://i.ibb.co/vvM1VnhW/20250910-205841-min.jpg"
+        ]
+    }
+}
