@@ -2,7 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Watch Shop</title>
+<title>Kovacevic Satovi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- SEO -->
+<meta name="title" content="Kovacevic Satovi" />
+<meta name="description" content="Polovni satovi vrhunskih brendova. Servisirani i spremni za nosenje!" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kovacevic-satovi.com/" />
+<meta property="og:title" content="Kovacevic Satovi" />
+<meta property="og:description" content="Polovni satovi vrhunskih brendova. Servisirani i spremni za nosenje!" />
+<meta property="og:image" content="https://i.ibb.co/tTz0V1bV/kovacevic-logo.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://kovacevic-satovi.com/" />
+<meta property="twitter:title" content="Kovacevic Satovi" />
+<meta property="twitter:description" content="Polovni satovi vrhunskih brendova. Servisirani i spremni za nosenje!" />
+<meta property="twitter:image" content="https://i.ibb.co/tTz0V1bV/kovacevic-logo.png" />
+
 <style>
 body { 
   margin:0; 
@@ -111,6 +134,7 @@ header img { height:110px; }
   font-size:28px; 
   cursor:pointer; 
   color:#fff; 
+  z-index:2000;
 }
 
 .nav-btn { 
@@ -183,6 +207,7 @@ footer {
   font-weight:bold;
 }
 .footer-instagram:hover { background:#c72a5a; }
+
 @media (max-width:1000px){
   body { font-size:20px; }
   .container { padding:8px; gap:10px; }
@@ -195,13 +220,12 @@ footer {
   .modal-right h2 { font-size:22px; }
   .modal-right p { font-size:18px; }
   .image-thumbnails img { width:48px; height:48px; }
-  #modalClose { top:10px; right:14px; font-size:32px; }
+  #modalClose { top:10px; right:14px; font-size:36px; z-index:2000; }
   .footer-content { gap:6px; }
   .footer-brand { font-size:13px; }
   .footer-links a, .footer-instagram { font-size:18px; padding:8px 10px; }
 }
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -245,6 +269,13 @@ fetch('/watches.json')
   .then(json => {
     watches = Object.keys(json).map(key => ({ key, ...json[key] }));
     renderWatches();
+
+    const params = new URLSearchParams(window.location.search);
+    const itemKey = params.get("item");
+    if (itemKey) {
+      const idx = watches.findIndex(w => w.key === itemKey);
+      if (idx >= 0) openModal(idx, false);
+    }
   })
   .catch(err => console.error("Failed to load JSON:", err));
 
@@ -254,7 +285,7 @@ function renderWatches(){
   watches.forEach((watch, idx)=>{
     const card = document.createElement('div');
     card.className = 'watch-card';
-    card.onclick = ()=>openModal(idx);
+    card.onclick = ()=>openModal(idx, true);
 
     const img = document.createElement('img');
     img.src = watch.images && watch.images[0] || '';
@@ -270,11 +301,27 @@ function renderWatches(){
   });
 }
 
-function openModal(idx){
+function openModal(idx, push=true){
   currentWatch = watches[idx];
   popupIndex = 0;
   updateModal();
   document.getElementById('modal').style.display = 'flex';
+
+  if (push) {
+    const params = new URLSearchParams(window.location.search);
+    params.set("item", currentWatch.key);
+    history.pushState({ modal:true }, "", "?" + params.toString());
+  }
+}
+
+function closeModal(pop=true){
+  document.getElementById('modal').style.display='none';
+  currentWatch = null;
+  if (pop) {
+    const params = new URLSearchParams(window.location.search);
+    params.delete("item");
+    history.pushState({}, "", window.location.pathname + (params.toString() ? "?" + params.toString() : ""));
+  }
 }
 
 function updateModal(){
@@ -307,20 +354,41 @@ function updateModal(){
   }
 }
 
-document.getElementById('modalClose').onclick = ()=>document.getElementById('modal').style.display='none';
-document.getElementById('prevImg').onclick = ()=>{ if(!currentWatch.images) return; popupIndex=(popupIndex-1+currentWatch.images.length)%currentWatch.images.length; updateModal();}
-document.getElementById('nextImg').onclick = ()=>{ if(!currentWatch.images) return; popupIndex=(popupIndex+1)%currentWatch.images.length; updateModal(); }
+document.getElementById('modalClose').onclick = ()=>closeModal();
+
+document.getElementById('prevImg').onclick = ()=>{ 
+  if(!currentWatch.images) return; 
+  popupIndex=(popupIndex-1+currentWatch.images.length)%currentWatch.images.length; 
+  updateModal();
+}
+document.getElementById('nextImg').onclick = ()=>{ 
+  if(!currentWatch.images) return; 
+  popupIndex=(popupIndex+1)%currentWatch.images.length; 
+  updateModal();
+}
 
 document.addEventListener('keydown', e=>{
   if(document.getElementById('modal').style.display!=='flex') return;
   if(e.key==='ArrowLeft') document.getElementById('prevImg').click();
   if(e.key==='ArrowRight') document.getElementById('nextImg').click();
-  if(e.key==='Escape') document.getElementById('modalClose').click();
+  if(e.key==='Escape') closeModal();
 });
 
 document.getElementById('modal').addEventListener('click', e => {
   if (e.target.id === 'modal') {
-    document.getElementById('modal').style.display = 'none';
+    closeModal();
+  }
+});
+
+// Handle back/forward navigation
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(window.location.search);
+  const itemKey = params.get("item");
+  if (itemKey && !currentWatch) {
+    const idx = watches.findIndex(w => w.key === itemKey);
+    if (idx >= 0) openModal(idx, false);
+  } else if (!itemKey && currentWatch) {
+    closeModal(false);
   }
 });
 </script>
