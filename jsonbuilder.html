@@ -13,7 +13,7 @@ body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#eee;
 .watch-item.active { background:#555; }
 #main { flex:1; padding:20px; overflow-y:auto; position:relative; }
 label { font-weight:bold; display:block; margin-bottom:5px; }
-input, textarea { width:100%; padding:10px; margin-bottom:12px; border-radius:6px; border:1px solid #444; background:#1e1e1e; color:#fff; box-sizing:border-box; }
+input, textarea, select { width:100%; padding:10px; margin-bottom:12px; border-radius:6px; border:1px solid #444; background:#1e1e1e; color:#fff; box-sizing:border-box; }
 textarea { height:70px; font-family: monospace; }
 .btn { background:#333; color:#fff; border:none; padding:8px 16px; margin:5px; border-radius:6px; cursor:pointer; transition:0.2s; }
 .btn:hover { background:#555; }
@@ -63,6 +63,16 @@ textarea { height:70px; font-family: monospace; }
       <div class="field"><label>Country:</label><input id="country" type="text"><div id="countrySuggestions"></div></div>
       <div class="field"><label>Price:</label><input id="price" type="text"></div>
     </div>
+    <div class="row">
+      <div class="field"><label>Gender:</label>
+        <select id="gender">
+          <option value="">-- Select --</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Unisex">Unisex</option>
+        </select>
+      </div>
+    </div>
     <label>Description:</label>
     <textarea id="description"></textarea>
     <label>Bracelet:</label>
@@ -84,7 +94,7 @@ let watchOrder = [];
 let currentKey = null;
 let fileHandle = null;
 let popupIndex = 0;
-const fields = ["name","color","case_size","movement","country","description","price","bracelet","images"];
+const fields = ["name","color","case_size","movement","country","description","price","bracelet","gender","images"];
 
 const watchListDiv = document.getElementById("watchList");
 const searchBox = document.getElementById("searchBox");
@@ -299,7 +309,6 @@ countryInput.addEventListener("input", ()=>{
     div.onclick=()=>{ countryInput.value=c; countrySuggestions.style.display="none"; };
     countrySuggestions.appendChild(div);
   });
-  // Position under input
   countrySuggestions.style.top = countryInput.offsetTop + countryInput.offsetHeight + "px";
   countrySuggestions.style.left = countryInput.offsetLeft + "px";
   countrySuggestions.style.width = countryInput.offsetWidth + "px";

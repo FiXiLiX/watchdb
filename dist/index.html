@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -44,8 +44,41 @@ header {
   text-align:center; 
   background:#1e1e1e; 
   border-bottom:1px solid #444; 
+  position:relative;
 }
 header img { height:110px; }
+
+#filtersToggle {
+  position:absolute;
+  right:15px;
+  top:15px;
+  padding:6px 12px;
+  background:#333;
+  border:none;
+  border-radius:4px;
+  color:#fff;
+  cursor:pointer;
+  font-size:14px;
+}
+#filtersToggle:hover {
+  background:#444;
+}
+
+#filterBar {
+  display:none;
+  background:#1e1e1e;
+  padding:10px;
+  text-align:center;
+  border-bottom:1px solid #444;
+}
+#genderFilter {
+  padding:8px 12px;
+  border-radius:6px;
+  border:1px solid #444;
+  background:#121212;
+  color:#fff;
+  font-size:16px;
+}
 
 .container { 
   display:flex; 
@@ -72,13 +105,14 @@ header img { height:110px; }
   border:1px solid #555; 
 }
 .watch-card img { 
-  width:100%; 
-  height:auto; 
+  width:auto; 
+  height:480px; 
   max-height:500px; 
   object-fit:contain; 
   border-radius:6px; 
 }
 .watch-card h2 { margin:0; font-size:20px; }
+.watch-card p { margin:2px 0; font-size:14px; padding: 0; }
 .price { font-weight:bold; font-size:16px; margin-top:5px; }
 
 #modal { 
@@ -231,7 +265,18 @@ footer {
 
 <header>
   <img src="/logo.png" alt="Logo">
+  <button id="filtersToggle">Filters</button>
 </header>
+
+<div id="filterBar">
+  <label for="genderFilter" style="margin-right:8px;">Filter by Gender:</label>
+  <select id="genderFilter">
+    <option value="all">All</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="unisex">Unisex</option>
+  </select>
+</div>
 
 <div class="container" id="watchContainer"></div>
 
@@ -263,6 +308,7 @@ footer {
 let watches = [];
 let currentWatch = null;
 let popupIndex = 0;
+let currentFilter = "all";
 
 fetch('/watches.json')
   .then(res => res.json())
@@ -282,23 +328,26 @@ fetch('/watches.json')
 function renderWatches(){
   const container = document.getElementById('watchContainer');
   container.innerHTML = '';
-  watches.forEach((watch, idx)=>{
-    const card = document.createElement('div');
-    card.className = 'watch-card';
-    card.onclick = ()=>openModal(idx, true);
+  watches
+    .filter(w => currentFilter==="all" || (w.gender || "").toLowerCase()===currentFilter)
+    .forEach((watch, idx)=>{
+      const card = document.createElement('div');
+      card.className = 'watch-card';
+      card.onclick = ()=>openModal(idx, true);
 
-    const img = document.createElement('img');
-    img.src = watch.images && watch.images[0] || '';
+      const img = document.createElement('img');
+      img.src = watch.images && watch.images[0] || '';
 
-    const title = document.createElement('h2'); title.textContent = watch.name;
-    const price = document.createElement('div'); price.className='price'; price.textContent = watch.price;
+      const title = document.createElement('h2'); title.textContent = watch.name;
+      const price = document.createElement('div'); price.className='price'; price.textContent = watch.price;
 
-    const color = document.createElement('p'); color.innerHTML = `<b>Color:</b> ${watch.color}`;
-    const caseSize = document.createElement('p'); caseSize.innerHTML = `<b>Case Size:</b> ${watch.case_size}`;
+      const gender = document.createElement('p'); gender.innerHTML = `<b>Gender:</b> ${watch.gender || 'Unisex'}`;
+      const color = document.createElement('p'); color.innerHTML = `<b>Color:</b> ${watch.color}`;
+      const caseSize = document.createElement('p'); caseSize.innerHTML = `<b>Case Size:</b> ${watch.case_size}`;
 
-    card.append(img,title,price,color,caseSize);
-    container.appendChild(card);
-  });
+      card.append(img,title,price,gender,color,caseSize);
+      container.appendChild(card);
+    });
 }
 
 function openModal(idx, push=true){
@@ -332,6 +381,7 @@ function updateModal(){
   details.innerHTML = `
     <h2>${currentWatch.name}</h2>
     <p><b>Price:</b> ${currentWatch.price}</p>
+    <p><b>Gender:</b> ${currentWatch.gender || 'Unisex'}</p>
     <p><b>Color:</b> ${currentWatch.color}</p>
     <p><b>Case Size:</b> ${currentWatch.case_size}</p>
     <p><b>Movement:</b> ${currentWatch.movement}</p>
@@ -378,6 +428,18 @@ document.getElementById('modal').addEventListener('click', e => {
   if (e.target.id === 'modal') {
     closeModal();
   }
+});
+
+// Filter logic
+document.getElementById('genderFilter').addEventListener('change', e=>{
+  currentFilter = e.target.value;
+  renderWatches();
+});
+
+// Filters toggle
+document.getElementById('filtersToggle').addEventListener('click', ()=>{
+  const bar = document.getElementById('filterBar');
+  bar.style.display = (bar.style.display==='block' ? 'none' : 'block');
 });
 
 // Handle back/forward navigation
