@@ -29,7 +29,7 @@
         "price": "5000din",
         "bracelet": "Crna Kozna",
         "images": [
-            "https://i.ibb.co/WNNKHkcd/20250916-220743144-Photoroom.png",
+            "https://i.ibb.co/RpLzXLHq/20250918-192019783-Photoroom.png",
             "https://i.ibb.co/1fbpXVhX/20250916-220610663.jpg",
             "https://i.ibb.co/zV8zWRYq/20250916-220619763.jpg",
             "https://i.ibb.co/6JFStNgT/20250428-210711.jpg",
@@ -52,22 +52,22 @@
             "https://i.ibb.co/vvM1VnhW/20250910-205841-min.jpg"
         ]
     },
-    "Slava2412": {
-        "name": "Slava 2412",
-        "color": "Pozlata",
-        "case_size": "30mm",
-        "movement": "Mehanicki 2412",
-        "country": "SSSR",
-        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu <br/> Preporuka za sat!",
+    "Omikron": {
+        "name": "Omikron",
+        "color": "Steel",
+        "case_size": "38mm",
+        "movement": "Automatic",
+        "country": "Swiss",
+        "description": "Potpuno ispravna i tacna, stanje kao na slikama",
         "price": "5000din",
-        "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm",
+        "bracelet": "Navy Blue 18mm Nova Kozna",
         "images": [
-            "https://i.ibb.co/Nbb917s/20250916-214811596-Photoroom.png",
-            "https://i.ibb.co/Q3LrBVkX/20250916-214808594.jpg",
-            "https://i.ibb.co/Qj69mszY/20250916-214811596.jpg",
-            "https://i.ibb.co/RttpvVX/20250916-214814413.jpg",
-            "https://i.ibb.co/8n6WPczY/20250916-214820698.jpg",
-            "https://i.ibb.co/twTGyQ8G/20250916-214823741.jpg"
+            "https://i.ibb.co/9mCH3Rkg/20250506-184722-Photoroom.png",
+            "https://i.ibb.co/m54H3L8S/20250506-184722.jpg",
+            "https://i.ibb.co/9kbDpyN2/20250506-185637.jpg",
+            "https://i.ibb.co/KzpTFqxw/20250506-185633.jpg",
+            "https://i.ibb.co/3yZ44Ycy/20250506-184718.jpg",
+            "https://i.ibb.co/6RRLXKjW/20250506-185657.jpg"
         ]
     },
     "SwatchWRAutomatic": {
@@ -86,6 +86,24 @@
             "https://i.ibb.co/rRRjGrLT/20250914-180618627.jpg",
             "https://i.ibb.co/1JQWRpJL/20250914-180629581.jpg",
             "https://i.ibb.co/vCdq7WPw/20250913-194349802.jpg"
+        ]
+    },
+    "Slava2412": {
+        "name": "Slava 2412",
+        "color": "Pozlata",
+        "case_size": "30mm",
+        "movement": "Mehanicki 2412",
+        "country": "SSSR",
+        "description": "Pozlata u odlicnom stanju, nigde skinuta, pleksi takodje, cifer dobija patinu polako <br/> Datum prebacuje u momentu <br/> Preporuka za sat!",
+        "price": "5000din",
+        "bracelet": "Hirsch Lizardlook Braon - Kao nova 18mm",
+        "images": [
+            "https://i.ibb.co/Nbb917s/20250916-214811596-Photoroom.png",
+            "https://i.ibb.co/Q3LrBVkX/20250916-214808594.jpg",
+            "https://i.ibb.co/Qj69mszY/20250916-214811596.jpg",
+            "https://i.ibb.co/RttpvVX/20250916-214814413.jpg",
+            "https://i.ibb.co/8n6WPczY/20250916-214820698.jpg",
+            "https://i.ibb.co/twTGyQ8G/20250916-214823741.jpg"
         ]
     }
 }
