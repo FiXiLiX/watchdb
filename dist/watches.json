@@ -111,5 +111,22 @@
             "https://i.ibb.co/8n6WPczY/20250916-214820698.jpg",
             "https://i.ibb.co/twTGyQ8G/20250916-214823741.jpg"
         ]
+    },
+    "LorusV5335A30": {
+        "name": "Lorus V533-5A30",
+        "color": "Steel",
+        "case_size": "34mm",
+        "movement": "Quartz Seiko V533",
+        "country": "Japan",
+        "description": "Odlicno ocuvan, sa originalnom narukvicom",
+        "price": "2400din",
+        "bracelet": "Originalna, metalna",
+        "gender": "Unisex",
+        "images": [
+            "https://i.ibb.co/nN4SzpQR/20250929-202143845-Photoroom.png",
+            "https://i.ibb.co/PzxDHjJX/20250929-202147053.jpg",
+            "https://i.ibb.co/20zTqRj5/20250929-202154333.jpg",
+            "https://i.ibb.co/5xC1rLyp/20250929-202224582.jpg"
+        ]
     }
 }
