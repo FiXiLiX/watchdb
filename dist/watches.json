@@ -128,5 +128,24 @@
             "https://i.ibb.co/20zTqRj5/20250929-202154333.jpg",
             "https://i.ibb.co/5xC1rLyp/20250929-202224582.jpg"
         ]
+    },
+    "Lacoste": {
+        "name": "Lacoste",
+        "color": "Beli",
+        "case_size": "44mm",
+        "movement": "Quartz",
+        "country": "Japan",
+        "description": "U odlicnom stanju, funkcija stoperice i sata",
+        "price": "2000din",
+        "bracelet": "Originalna gumena bela",
+        "gender": "Male",
+        "images": [
+            "https://i.ibb.co/20jPx8gq/20250929-201042458-Photoroom.png",
+            "https://i.ibb.co/wNKBqYCT/20250929-200954196.jpg",
+            "https://i.ibb.co/XfRKHL0x/20250929-201021890.jpg",
+            "https://i.ibb.co/GQVS8Ln1/20250929-201042458.jpg",
+            "https://i.ibb.co/xtcwzSbH/20250929-201044589.jpg",
+            "https://i.ibb.co/Kz5YBTVc/20250929-201050223.jpg"
+        ]
     }
 }
