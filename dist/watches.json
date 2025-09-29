@@ -147,5 +147,24 @@
             "https://i.ibb.co/xtcwzSbH/20250929-201044589.jpg",
             "https://i.ibb.co/Kz5YBTVc/20250929-201050223.jpg"
         ]
+    },
+    "Citizen6010": {
+        "name": "Citizen 6010",
+        "color": "Celik-Zlato",
+        "case_size": "36mm",
+        "movement": "Quartz 6010 Citizen",
+        "country": "West Germany",
+        "description": "Veoma dobro ocuvan, nova narukvica, star 40ak godina",
+        "price": "3000din",
+        "bracelet": "",
+        "gender": "Female",
+        "images": [
+            "https://i.ibb.co/WNkcw8VZ/20250929-204913716-Photoroom.png",
+            "https://i.ibb.co/8LSt7Xv1/20250929-204913716.jpg",
+            "https://i.ibb.co/VWVfqsBB/20250929-204917399.jpg",
+            "https://i.ibb.co/Z6brvFW3/20250929-204925825.jpg",
+            "https://i.ibb.co/5XXsXQXz/20250929-204930802.jpg",
+            "https://i.ibb.co/Fb677rF5/20250929-204948462.jpg"
+        ]
     }
 }
